@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="15dp"
+    android:layout_marginHorizontal="15dp"
+    tools:context=".fragment.HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/headerSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, Username!"
+            android:layout_alignBaseline="@id/btnWishlist"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:id="@+id/btnNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/btnWishlist"
+            android:src="@drawable/notification_icon"
+            android:layout_marginEnd="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/btnWishlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/wishlist_icon"
+            />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardJumbotron"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerSection"
+        app:cardCornerRadius="15dp"
+        android:backgroundTint="@color/bg_secondary"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="15dp"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/jumbotronImage"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                >
+                <TextView
+                    android:id="@+id/tvWelcomeKubuku"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome to Kubuku"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvWelcomeKubuku"
+                    android:layout_alignStart="@id/tvWelcomeKubuku"
+                    android:text="Aplikasi sewa buku praktis, tinggal pilih, bayar, dan tunggu bukumu sampai rumah"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"
+                    android:justificationMode="inter_word"
+                    />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/jumbotronImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/jumbotron_image_idea"
+                />
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
