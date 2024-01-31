@@ -48,7 +48,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/rounded_bg_edittext"
+                android:background="@drawable/rounded_border_edittext"
                 android:drawableLeft="@drawable/ic_email"
                 android:hint="Email"
                 android:paddingVertical="5dp"
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/rounded_bg_edittext"
+                android:background="@drawable/rounded_border_edittext"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
                 >
@@ -78,7 +78,7 @@
                     android:layout_marginRight="40dp"
                     android:background="@android:color/transparent"
                     android:fontFamily="@font/sf_ui_text_regular"
-                    android:drawableLeft="@drawable/password_icon"
+                    android:drawableLeft="@drawable/ic_password"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:selectAllOnFocus="true"
@@ -90,11 +90,10 @@
                     android:id="@+id/btnHideUnhide"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:clickable="true"
-                    android:src="@drawable/ic_hide_unhide"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    />
+                    android:clickable="true"
+                    android:src="@drawable/ic_hide_unhide" />
 
             </RelativeLayout>
 
