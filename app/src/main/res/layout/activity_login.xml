@@ -1,177 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="20dp"
+    >
+
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:elevation="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="30dp"
-        android:paddingVertical="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_centerVertical="true"
+        >
 
         <ImageView
             android:id="@+id/ivLogoHorizontal"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content"
-            android:src="@tools:sample/avatars"
-            app:srcCompat="@drawable/kubuku_logohorizontal" />
+            android:src="@drawable/kubuku_logo_horizontal"
+            />
 
         <LinearLayout
             android:id="@+id/llContainerForm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="58dp"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            >
 
-            <LinearLayout
-                android:id="@+id/emailBox"
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_bg_edittext"
+                android:drawableLeft="@drawable/email_icon"
+                android:hint="Email"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginTop="28dp"
+                android:inputType="textEmailAddress"
+                android:selectAllOnFocus="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="15dp"
+                android:fontFamily="@font/sf_ui_text_regular"
+                />
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/rounded_bg_edittext"
-                android:orientation="horizontal"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp">
+                android:paddingVertical="5dp"
+                >
+
                 <EditText
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    android:fontFamily="@font/sf_ui_text_regular"
-                    android:drawableLeft="@drawable/email_icon"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:selectAllOnFocus="true"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textSize="15dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/passwordBox"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="28dp"
-                android:background="@drawable/rounded_bg_edittext"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp">
-                <EditText
-                    android:layout_width="285dp"
-                    android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
                     android:background="@android:color/transparent"
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:drawableLeft="@drawable/password_icon"
                     android:hint="Password"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textPassword"
                     android:selectAllOnFocus="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/hide_unhide_icon" />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/btnHideUnhide"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:src="@drawable/hide_unhide_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
-                <Button
+                <TextView
                     android:id="@+id/btnForgotPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:background="none"
                     android:fontFamily="@font/sf_ui_text_regular"
+                    android:paddingVertical="15dp"
                     android:text="Forgot Password?"
                     android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    android:textSize="15sp"
+                    android:clickable="true"
+                    />
 
                 <Button
+                    android:id="@+id/btnLogin"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="150dp"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="12dp"
                     android:backgroundTint="@color/bg_secondary"
                     android:fontFamily="@font/sf_ui_text_bold"
+                    android:layout_below="@id/btnForgotPassword"
                     android:text="Login"
                     android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    android:textSize="17dp"
+                    />
 
             </RelativeLayout>
 
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="30dp"
-                android:orientation="horizontal"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/or_devider"
-                    android:drawablePadding="22dp"
-                    android:text="OR"
-                    android:fontFamily="@font/sf_ui_text_bold"
-                    android:textSize="17sp"
-                    android:drawableRight="@drawable/or_devider"
-                    />
-
-            </LinearLayout>
-
-<!--            <ImageView-->
-<!--                android:id="@+id/ivOr"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/or"-->
-<!--                android:layout_marginVertical="30dp"/>-->
+                android:layout_marginVertical="25dp"
+                android:drawableLeft="@drawable/or_devider"
+                android:drawablePadding="8dp"
+                android:text="OR"
+                android:textAlignment="center"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:textSize="17sp"
+                android:drawableRight="@drawable/or_devider"
+                />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <FrameLayout
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLoginWithGoogle"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/rounded_bg_edittext"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="5dp">
-                    <Button
-                        android:id="@+id/btnLoginWithGoogle"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:drawableLeft="@drawable/google_icon"
-                        android:text="Login with Google"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:backgroundTint="@color/white"
-                        />
-                </FrameLayout>
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:drawableLeft="@drawable/google_icon"
+                    android:text="Login with Google"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:background="@drawable/border_primary"
+                    />
 
-                <FrameLayout
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLoginWithFacebook"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/rounded_bg_edittext"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="5dp"
-                    android:layout_marginTop="76dp"
-                    >
-                    <Button
-                        android:id="@+id/btnLoginWithFacebook"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:drawableLeft="@drawable/fb_icon"
-                        android:text="Login with Facebook"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:backgroundTint="@color/white" />
-                </FrameLayout>
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp"
+                    android:layout_below="@id/btnLoginWithGoogle"
+                    android:drawableLeft="@drawable/fb_icon"
+                    android:text="Login with Facebook"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:background="@drawable/border_primary"
+                    />
 
 
             </RelativeLayout>
@@ -185,18 +191,18 @@
                 >
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/tvDontHaveAccount"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Don’t have an account?"
                     android:textSize="15dp" />
 
-                <Button
-                    android:id="@+id/btnToSignUpPage"
+                <TextView
+                    android:id="@+id/btnRegister"
+                    android:clickable="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#FFFFFF"
                     android:fontFamily="@font/sf_ui_text_bold"
                     android:paddingHorizontal="0dp"
                     android:paddingVertical="0dp"
@@ -204,11 +210,9 @@
                     android:textColor="#000000"
                     android:textSize="15dp" />
 
-
             </LinearLayout>
-
-
         </LinearLayout>
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

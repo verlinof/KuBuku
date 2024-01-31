@@ -1,5 +1,6 @@
 package com.example.kubuku
 
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
@@ -12,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.kubuku.adapter.SliderAdapter
+import com.example.kubuku.authentication.LoginActivity
+import com.example.kubuku.authentication.RegisterActivity
 import com.example.kubuku.databinding.ActivityOnboardingBinding
 
 class OnboardingActivity : AppCompatActivity() {
@@ -41,6 +44,13 @@ class OnboardingActivity : AppCompatActivity() {
 
         adapter = SliderAdapter(sliderImageList, sliderTitleList)
         with(binding) {
+            btnRegister.setOnClickListener {
+                startActivity(Intent(this@OnboardingActivity, RegisterActivity::class.java))
+            }
+            btnLogin.setOnClickListener {
+                startActivity(Intent(this@OnboardingActivity, LoginActivity::class.java))
+            }
+
             // Set ViewPager Adapter and Indicator Dots
             vpSlider.adapter = adapter
             dots = ArrayList()
