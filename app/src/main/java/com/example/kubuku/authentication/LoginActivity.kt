@@ -26,6 +26,9 @@ class LoginActivity : AppCompatActivity() {
                 showLoading()
                 login()
             }
+            btnRegister.setOnClickListener {
+                startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+            }
             btnHideUnhide.setOnClickListener {
                 val selection = etPassword.selectionEnd // Simpan posisi kursor
 

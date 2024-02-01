@@ -5,10 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.kubuku.R
 import com.example.kubuku.databinding.FragmentLibraryBinding
 
-class LibraryFragment : Fragment() {
+class DiscoveryFragment : Fragment() {
     private lateinit var binding: FragmentLibraryBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
