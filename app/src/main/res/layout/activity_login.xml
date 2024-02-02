@@ -90,10 +90,11 @@
                     android:id="@+id/btnHideUnhide"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_hide_unhide"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:clickable="true"
-                    android:src="@drawable/ic_hide_unhide" />
+                    />
 
             </RelativeLayout>
 
