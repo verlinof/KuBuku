@@ -35,6 +35,7 @@
                 android:orientation="vertical"
                 >
 
+
                 <EditText
                     android:id="@+id/etEmail"
                     android:layout_width="match_parent"
@@ -83,6 +84,7 @@
                     android:selectAllOnFocus="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textSize="15dp" />
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
