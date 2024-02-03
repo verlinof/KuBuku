@@ -46,7 +46,7 @@ class OnboardingActivity : AppCompatActivity() {
         adapter = SliderAdapter(sliderImageList, sliderTitleList)
         with(binding) {
             btnRegister.setOnClickListener {
-                startActivity(Intent(this@OnboardingActivity, DashboardActivity::class.java))
+                startActivity(Intent(this@OnboardingActivity, RegisterActivity::class.java))
             }
             btnLogin.setOnClickListener {
                 startActivity(Intent(this@OnboardingActivity, LoginActivity::class.java))

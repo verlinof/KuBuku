@@ -8,18 +8,24 @@ import android.text.InputType
 import android.view.View
 import android.widget.Toast
 import com.example.kubuku.databinding.ActivityLoginBinding
+import com.example.kubuku.helper.HelperSharedPreferences
 import com.example.kubuku.page.DashboardActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var helperSharedPreferences: HelperSharedPreferences
     private val auth = FirebaseAuth.getInstance()
-
+    private val firestore = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        helperSharedPreferences = HelperSharedPreferences(this@LoginActivity)
 
         with(binding) {
             btnLogin.setOnClickListener {
@@ -54,6 +60,7 @@ class LoginActivity : AppCompatActivity() {
 
                         hideLoading()
 
+                        getUserCredentials(currentUser!!)
                         Toast.makeText(this@LoginActivity, "Welcome back, ${currentUser!!.email}", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
                         finishAffinity()
@@ -68,6 +75,18 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "Check all the input!", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun getUserCredentials(user: FirebaseUser) {
+        firestore.collection("users").document(user.uid)
+            .get()
+            .addOnSuccessListener {  user ->
+                if(user.exists()) {
+                    val data = user.data
+                    helperSharedPreferences.setUsername(data!!["username"].toString())
+                    helperSharedPreferences.setPhone(data!!["phone"].toString())
+                }
+            }
     }
 
     private fun checkInputField():Boolean {

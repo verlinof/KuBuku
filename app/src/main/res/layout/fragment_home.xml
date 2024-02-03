@@ -150,9 +150,8 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="16dp"
                         android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:fontFamily="@font/sf_ui_text_bold"
                         android:text="Batas Peminjaman Bukumu"
-                        android:textStyle="bold"
                         android:textColor="@color/black"
                         />
 
@@ -179,7 +178,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/sf_ui_text_bold"
                                 android:text="29.02.2024"
-                                android:textSize="20dp"
+                                android:textSize="25dp"
                                 android:textColor="@color/black"
                                 />
 
