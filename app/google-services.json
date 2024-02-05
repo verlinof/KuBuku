@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "426549869433",
-    "project_id": "kubuku-1fb62",
-    "storage_bucket": "kubuku-1fb62.appspot.com"
+    "project_number": "857598724832",
+    "project_id": "kubuku-1c0fb",
+    "storage_bucket": "kubuku-1c0fb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:426549869433:android:feeebb31548974f2364da8",
+        "mobilesdk_app_id": "1:857598724832:android:3fbd3f50d3241c39269e85",
         "android_client_info": {
           "package_name": "com.example.kubuku"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC8J_vw2lvST_8EJjljiCGEYyL9aE4YlBk"
+          "current_key": "AIzaSyBZb0WhEtHvf7XRpvsU5B3YGu_1YThTKqs"
         }
       ],
       "services": {

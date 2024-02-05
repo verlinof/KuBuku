@@ -8,97 +8,386 @@
     android:layout_marginHorizontal="15dp"
     tools:context=".fragment.HomeFragment">
 
-    <RelativeLayout
-        android:id="@+id/headerSection"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingVertical="10dp"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
         >
 
-        <TextView
-            android:id="@+id/tvUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello, Username!"
-            android:layout_alignBaseline="@id/btnWishlist"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            />
-
-        <ImageView
-            android:id="@+id/btnNotification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/btnWishlist"
-            android:src="@drawable/ic_notification"
-            android:layout_marginEnd="10dp"
-            />
-
-        <ImageView
-            android:id="@+id/btnWishlist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/wishlist_icon"
-            />
-
-    </RelativeLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardJumbotron"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/headerSection"
-        app:cardCornerRadius="15dp"
-        android:backgroundTint="@color/bg_secondary"
-        >
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingVertical="20dp"
-            android:paddingHorizontal="15dp"
-            >
+            android:layout_height="match_parent">
+
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/headerSection"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/jumbotronImage"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="5dp"
+                android:paddingVertical="15dp"
                 >
+
                 <TextView
-                    android:id="@+id/tvWelcomeKubuku"
+                    android:id="@+id/tvUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Welcome to Kubuku"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:text="Hello, Username!"
+                    android:layout_alignBaseline="@id/btnWishlist"
+                    android:textSize="15sp"
                     android:textColor="@color/black"
                     />
 
-                <TextView
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/btnNotification"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvWelcomeKubuku"
-                    android:layout_alignStart="@id/tvWelcomeKubuku"
-                    android:text="Aplikasi sewa buku praktis, tinggal pilih, bayar, dan tunggu bukumu sampai rumah"
-                    android:textColor="@color/black"
-                    android:textSize="10dp"
-                    android:justificationMode="inter_word"
+                    android:layout_toLeftOf="@id/btnCart"
+                    android:src="@drawable/ic_notification"
+                    android:layout_marginEnd="14dp"
                     />
+
+                <ImageView
+                    android:id="@+id/btnCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/btnWishlist"
+                    android:src="@drawable/ic_cart"
+                    android:layout_marginEnd="14dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/btnWishlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_wishlist"
+                    />
+
             </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/jumbotronImage"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardJumbotron"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headerSection"
+                app:cardCornerRadius="15dp"
+                android:backgroundTint="@color/bg_secondary"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="20dp"
+                    android:paddingHorizontal="15dp"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/jumbotronImage"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
+                        >
+                        <TextView
+                            android:id="@+id/tvWelcomeKubuku"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_ui_text_bold"
+                            android:text="Welcome to Kubuku"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvWelcomeKubuku"
+                            android:layout_alignStart="@id/tvWelcomeKubuku"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:text="Aplikasi sewa buku praktis, tinggal pilih, bayar, dan tunggu bukumu sampai rumah"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"
+                            android:justificationMode="inter_word"
+                            />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/jumbotronImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/jumbotron_image_idea"
+                        />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardJumbotron"
+                app:cardBackgroundColor="@color/bg_third"
+                app:cardCornerRadius="16dp"
+                android:layout_marginVertical="20dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_bookmark"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="35dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvBatasPeminjaman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:text="Batas Peminjaman Bukumu"
+                        android:textColor="@color/black"
+                        />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/bg_primary"
+                        android:layout_below="@id/tvBatasPeminjaman"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginHorizontal="25dp"
+                        app:cardCornerRadius="20dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingVertical="10dp"
+                            android:gravity="center_horizontal"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_ui_text_bold"
+                                android:text="29.02.2024"
+                                android:textSize="25dp"
+                                android:textColor="@color/black"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sf_ui_text_bold"
+                                android:text="DD.MM.YYYY"
+                                android:textSize="10dp"
+                                android:textColor="@color/black"
+                                />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Genre"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_below="@id/cardDeadline"
+                />
+
+            <TextView
+                android:id="@+id/btnMoreGenre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/jumbotron_image_idea"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Lihat lebih banyak"
+                android:textSize="11sp"
+                android:layout_below="@id/cardDeadline"
                 />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGenre"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@id/btnMoreGenre"
+                android:layout_marginVertical="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Buku Favorit"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_below="@id/rvGenre"
+                />
+
+            <TextView
+                android:id="@+id/btnMoreFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Lihat lebih banyak"
+                android:textSize="11sp"
+                android:layout_below="@id/rvGenre"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFavorite"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/btnMoreFavorite"
+                android:layout_marginVertical="15dp"
+                />
+
+            <TextView
+                android:id="@+id/tvQuotesDariPenulis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Quotes dari Penulis"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_below="@id/rvFavorite"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPenulis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                app:cardCornerRadius="15dp"
+                android:backgroundTint="@color/bg_secondary"
+                android:layout_below="@id/tvQuotesDariPenulis"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="30dp"
+                    android:paddingHorizontal="27dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/cardImagePenulis"
+                        android:layout_marginEnd="25dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="“Jadilah seperti lilin, yang tidak pernah menyesal saat nyala api membakarmu. Jadilah seperti air yang mengalir sabar. Jangan pernah takut memulai hal baru.”"
+                            android:fontFamily="@font/sf_ui_text_bold"
+                            android:textColor="@color/black"
+                            android:textSize="8sp"
+                            android:textAlignment="center"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Kutipan dari buku berjudul Tentang Kamu yang ditulis oleh Tereliye"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:textColor="@color/black"
+                            android:textSize="8sp"
+                            android:textAlignment="center"
+                            />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardImagePenulis"
+                        android:layout_width="75dp"
+                        android:layout_height="108dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_alignParentEnd="true"
+                        >
+                        <ImageView
+                            android:id="@+id/ivPenulis"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/img_tere_liye"
+                            android:scaleType="centerCrop"
+                            />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/tvNamaPenulis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cardImagePenulis"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:text="Tere Liye"
+                        android:textSize="10dp"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:layout_alignStart="@id/cardImagePenulis"
+                        android:layout_alignEnd="@id/cardImagePenulis"
+                        />
+                    
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Bundling"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_below="@id/cardPenulis"
+                />
+
+            <TextView
+                android:id="@+id/btnMoreBundling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Lihat lebih banyak"
+                android:textSize="11sp"
+                android:layout_below="@id/cardPenulis"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBundling"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/btnMoreBundling"
+                android:layout_marginVertical="15dp"
+                />
+
         </RelativeLayout>
 
-
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
 
 </RelativeLayout>

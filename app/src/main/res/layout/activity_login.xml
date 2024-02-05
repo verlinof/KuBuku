@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="20dp"
@@ -43,7 +42,6 @@
             android:orientation="vertical"
             >
 
-
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
@@ -81,7 +79,6 @@
                     android:drawableLeft="@drawable/ic_password"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:selectAllOnFocus="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textSize="15dp"
                     />
@@ -111,7 +108,7 @@
                     android:layout_alignParentEnd="true"
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:paddingVertical="15dp"
-                    android:text="Lupa Password?"
+                    android:text="Forgot Password?"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:clickable="true"
@@ -125,7 +122,7 @@
                     android:backgroundTint="@color/bg_secondary"
                     android:fontFamily="@font/sf_ui_text_bold"
                     android:layout_below="@id/btnForgotPassword"
-                    android:text="Masuk"
+                    android:text="Login"
                     android:textColor="@color/black"
                     android:textSize="17dp"
                     />
@@ -139,6 +136,7 @@
                 android:drawableLeft="@drawable/or_devider"
                 android:drawablePadding="8dp"
                 android:text="Atau"
+                android:textColor="@color/black"
                 android:textAlignment="center"
                 android:fontFamily="@font/sf_ui_text_bold"
                 android:textSize="17sp"
@@ -157,11 +155,11 @@
                     android:paddingHorizontal="20dp"
                     android:layout_marginBottom="20dp"
                     android:drawableLeft="@drawable/ic_google"
-                    android:text="Masuk dengan Google"
+                    android:text="Login with Google"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="17sp"
-                    android:background="@drawable/border_primary"
+                    android:background="@drawable/rounded_border_edittext"
                     />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -172,11 +170,11 @@
                     android:paddingHorizontal="20dp"
                     android:layout_below="@id/btnLoginWithGoogle"
                     android:drawableLeft="@drawable/ic_facebook"
-                    android:text="Masuk dengan Facebook"
+                    android:text="Login with Facebook"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="17sp"
-                    android:background="@drawable/border_primary"
+                    android:background="@drawable/rounded_border_edittext"
                     />
 
 
@@ -192,10 +190,11 @@
 
                 <TextView
                     android:id="@+id/tvDontHaveAccount"
-                    android:layout_width="140dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_ui_text_regular"
-                    android:text="Belum punya akun?"
+                    android:textColor="@color/black"
+                    android:text="Don’t have an account?"
                     android:textSize="15dp" />
 
                 <TextView
@@ -206,11 +205,12 @@
                     android:fontFamily="@font/sf_ui_text_bold"
                     android:paddingHorizontal="0dp"
                     android:paddingVertical="0dp"
-                    android:text="Daftar"
-                    android:textColor="#000000"
+                    android:text="Create Account"
+                    android:textColor="@color/black"
                     android:textSize="15dp" />
 
             </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

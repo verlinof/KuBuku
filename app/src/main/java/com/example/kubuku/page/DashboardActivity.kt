@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.kubuku.R
 import com.example.kubuku.databinding.ActivityDashboardBinding
 import com.example.kubuku.fragment.HomeFragment
-import com.example.kubuku.fragment.LibraryFragment
+import com.example.kubuku.fragment.DiscoveryFragment
 import com.example.kubuku.fragment.ProfileFragment
 
 class DashboardActivity : AppCompatActivity() {
@@ -23,7 +23,8 @@ class DashboardActivity : AppCompatActivity() {
             navbarDashboard.setOnItemSelectedListener() {
                 when(it.itemId) {
                     R.id.itemHome -> replaceFragment(HomeFragment())
-                    R.id.itemLibrary -> replaceFragment(LibraryFragment())
+                    R.id.itemDiscover -> replaceFragment(DiscoveryFragment())
+                    R.id.itemTransaction -> replaceFragment(DiscoveryFragment())
                     R.id.itemProfile -> replaceFragment(ProfileFragment())
                     else -> {}
                 }
