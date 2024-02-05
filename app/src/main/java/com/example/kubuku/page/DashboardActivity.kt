@@ -24,6 +24,7 @@ class DashboardActivity : AppCompatActivity() {
                 when(it.itemId) {
                     R.id.itemHome -> replaceFragment(HomeFragment())
                     R.id.itemDiscover -> replaceFragment(DiscoveryFragment())
+                    R.id.itemTransaction -> replaceFragment(DiscoveryFragment())
                     R.id.itemProfile -> replaceFragment(ProfileFragment())
                     else -> {}
                 }

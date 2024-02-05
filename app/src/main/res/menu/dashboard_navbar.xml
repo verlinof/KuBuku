@@ -5,29 +5,34 @@
 
     <item
         android:id="@+id/itemHome"
+        android:title="Home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_navbar_home"
-        app:showAsAction="always"
-        tools:ignore="MenuTitle"
         />
 
     <item
         android:id="@+id/itemDiscover"
+        android:title="Discovery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_navbar_discovery"
-        app:showAsAction="always"
-        tools:ignore="MenuTitle"
+        />
+
+    <item
+        android:id="@+id/itemTransaction"
+        android:title="Transaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_navbar_transaction"
         />
 
     <item
         android:id="@+id/itemProfile"
+        android:title="Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_navbar_profile"
-        app:showAsAction="always"
-        tools:ignore="MenuTitle"
         />
 
 </menu>

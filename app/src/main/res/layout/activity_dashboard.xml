@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".page.DashboardActivity">
 
     <FrameLayout
@@ -21,9 +22,15 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navbarDashboard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/dashboard_navbar"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="25dp"
+        app:labelVisibilityMode="unlabeled"
+        app:itemBackground="@drawable/item_navbar_selector"
+        app:itemActiveIndicatorStyle="@color/bg_secondary"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

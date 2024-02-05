@@ -13,6 +13,14 @@
         android:theme="@style/Theme.KuBuku"
         tools:targetApi="31">
         <activity
+            android:name=".page.DetailBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".page.DetailsBookActivity"
+            android:exported="false"
+            android:label="@string/title_activity_details_book"
+            android:theme="@style/Theme.KuBuku" />
+        <activity
             android:name=".page.DashboardActivity"
             android:exported="false" />
         <activity
