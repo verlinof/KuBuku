@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    tools:context=".page.DetailBookActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,14 +28,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
+
                 <ImageButton
                     android:id="@+id/btnBack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_back"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/circle_bg_primary"
+                    android:src="@drawable/ic_back_24"
+                    android:layout_marginEnd="12dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
                     android:id="@+id/tvDetailProduk"
                     android:layout_width="wrap_content"
@@ -44,15 +48,17 @@
                     android:text="Detail Produk"
                     android:layout_toRightOf="@+id/btnBack"
                     android:textSize="17dp" />
+
             </RelativeLayout>
 
             <!-- Book's Main Image -->
             <ImageView
                 android:id="@+id/ivBuku"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="284dp"
                 android:paddingVertical="20dp"
-                android:src="@drawable/iv_contoh_buku"
+                android:scaleType="centerInside"
+                android:src="@drawable/img_contoh_buku"
                 />
 
             <!-- Book's Detail 1 -->
@@ -313,7 +319,9 @@
                     android:layout_marginVertical="2.5dp"
                     android:text="Sinopsis:"
                     android:fontFamily="@font/sf_ui_text_regular"
-                    android:textSize="12dp" />
+                    android:textSize="12dp"
+                    />
+
                 <TextView
                     android:id="@+id/tvDescSinopsis2"
                     android:layout_width="match_parent"
@@ -322,7 +330,8 @@
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Namaku Raib, usiaku 15 tahun, kelas sepuluh. Aku anak perempuan seperti kalian, adik-adik kalian, tetangga kalian. Aku punya dua kucing, namanya si Putih dan si Hitam. Mama dan papaku menyenangkan. Guru-guru di sekolahku seru.\n\nTeman-temanku baik dan kompak.\nAku sama seperti remaja kebanyakan, kecuali satu hal. Sesuatu yang kusimpan sendiri sejak kecil. Sesuatu yang menakjubkan.\n\nNamaku Raib. Dan aku bisa menghilang.\n\nBuku pertama dari serial 'BUMI'"
                     android:textAlignment="textStart"
-                    android:textSize="12dp" />
+                    android:textSize="12dp"
+                    />
 
             </RelativeLayout>
 

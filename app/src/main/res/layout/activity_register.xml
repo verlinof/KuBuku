@@ -11,7 +11,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,7 +37,6 @@
                 android:orientation="vertical"
                 >
 
-
                 <EditText
                     android:id="@+id/etEmail"
                     android:layout_width="match_parent"
@@ -45,7 +46,7 @@
                     android:hint="Email"
                     android:paddingVertical="5dp"
                     android:paddingHorizontal="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
                     android:inputType="textEmailAddress"
                     android:selectAllOnFocus="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
@@ -57,7 +58,7 @@
                     android:id="@+id/etPhone"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_border_edittext"
                     android:drawableLeft="@drawable/ic_phone"
                     android:fontFamily="@font/sf_ui_text_regular"
@@ -70,14 +71,14 @@
                     android:textSize="15dp" />
 
                 <EditText
-                    android:id="@+id/etName"
+                    android:id="@+id/etUsername"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_border_edittext"
                     android:drawableLeft="@drawable/ic_name"
                     android:fontFamily="@font/sf_ui_text_regular"
-                    android:hint="Nama"
+                    android:hint="Username"
                     android:inputType="text|textPersonName"
                     android:paddingHorizontal="10dp"
                     android:paddingVertical="5dp"
@@ -85,11 +86,10 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textSize="15dp" />
 
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_border_edittext"
                     android:paddingHorizontal="10dp"
                     android:paddingVertical="5dp"
@@ -100,17 +100,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
+                        android:background="@android:color/transparent"
                         android:fontFamily="@font/sf_ui_text_regular"
                         android:drawableLeft="@drawable/ic_password"
-                        android:enabled="false"
                         android:hint="Password"
-                        android:inputType="text|textPassword"
-                        android:background="@null"
-                        android:selectAllOnFocus="true"
-                        android:singleLine="true"
-                        android:textSize="15dp" />
+                        android:inputType="textPassword"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textSize="15dp"
+                        />
+
                     <ImageView
-                        android:id="@+id/btnHideUnhide"
+                        android:id="@+id/btnHideUnhidePassword"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:clickable="true"
@@ -118,13 +118,12 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         />
-
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
                     android:background="@drawable/rounded_border_edittext"
                     android:paddingHorizontal="10dp"
                     android:paddingVertical="5dp"
@@ -135,17 +134,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
-                        android:enabled="false"
+                        android:background="@android:color/transparent"
                         android:fontFamily="@font/sf_ui_text_regular"
                         android:drawableLeft="@drawable/ic_password"
-                        android:hint="Konfirmasi Password"
-                        android:inputType="text|textPassword"
-                        android:background="@null"
-                        android:selectAllOnFocus="true"
-                        android:singleLine="true"
-                        android:textSize="15dp" />
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textSize="15dp"
+                        />
+
                     <ImageView
-                        android:id="@+id/btnHideUnhide2"
+                        android:id="@+id/btnHideUnhideConfirmPassword"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:clickable="true"
@@ -160,7 +159,6 @@
                     android:id="@+id/btnRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:paddingVertical="12dp"
                     android:backgroundTint="@color/bg_secondary"
                     android:fontFamily="@font/sf_ui_text_bold"
@@ -176,6 +174,7 @@
                     android:drawableLeft="@drawable/or_devider"
                     android:drawablePadding="8dp"
                     android:text="Atau"
+                    android:textColor="@color/black"
                     android:textAlignment="center"
                     android:fontFamily="@font/sf_ui_text_bold"
                     android:textSize="17sp"
@@ -198,7 +197,7 @@
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="17sp"
-                        android:background="@drawable/border_primary"
+                        android:background="@drawable/rounded_border_edittext"
                         />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -213,7 +212,7 @@
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="17sp"
-                        android:background="@drawable/border_primary"
+                        android:background="@drawable/rounded_border_edittext"
                         />
 
 
