@@ -31,34 +31,39 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_ui_text_bold"
                     android:text="Hello, Username!"
-                    android:layout_alignBaseline="@id/btnWishlist"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:textColor="@color/black"
                     />
 
                 <ImageView
                     android:id="@+id/btnNotification"
-                    android:layout_width="wrap_content"
+                    android:layout_width="18dp"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/btnCart"
+                    android:layout_alignTop="@id/tvUsername"
+                    android:layout_alignBottom="@id/tvUsername"
                     android:src="@drawable/ic_notification"
                     android:layout_marginEnd="14dp"
                     />
 
                 <ImageView
                     android:id="@+id/btnCart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="20dp"
+                    android:layout_height="18dp"
                     android:layout_toLeftOf="@id/btnWishlist"
+                    android:layout_alignTop="@id/tvUsername"
+                    android:layout_alignBottom="@id/tvUsername"
                     android:src="@drawable/ic_cart"
                     android:layout_marginEnd="14dp"
                     />
 
                 <ImageView
                     android:id="@+id/btnWishlist"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="18dp"
+                    android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@id/tvUsername"
+                    android:layout_alignBottom="@id/tvUsername"
                     android:src="@drawable/ic_wishlist"
                     />
 
@@ -90,7 +95,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sf_ui_text_bold"
-                            android:text="Welcome to Kubuku"
+                            android:text="Selamat datang di Kubuku"
                             android:textSize="18sp"
                             android:textColor="@color/black"
                             />
@@ -103,19 +108,18 @@
                             android:fontFamily="@font/sf_ui_text_regular"
                             android:text="Aplikasi sewa buku praktis, tinggal pilih, bayar, dan tunggu bukumu sampai rumah"
                             android:textColor="@color/black"
-                            android:textSize="10dp"
-                            android:justificationMode="inter_word"
+                            android:textSize="12sp"
                             />
 
                     </RelativeLayout>
 
                     <ImageView
                         android:id="@+id/jumbotronImage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="127dp"
+                        android:layout_height="113dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/jumbotron_image_idea"
+                        android:src="@drawable/img_jumbotron_idea"
                         />
 
                 </RelativeLayout>
@@ -226,7 +230,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvGenre"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="65dp"
+                android:orientation="horizontal"
                 android:layout_below="@id/btnMoreGenre"
                 android:layout_marginVertical="15dp"
                 />
@@ -256,7 +261,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvFavorite"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="162dp"
+                android:orientation="horizontal"
                 android:layout_below="@id/btnMoreFavorite"
                 android:layout_marginVertical="15dp"
                 />
@@ -305,7 +311,7 @@
                             android:text="“Jadilah seperti lilin, yang tidak pernah menyesal saat nyala api membakarmu. Jadilah seperti air yang mengalir sabar. Jangan pernah takut memulai hal baru.”"
                             android:fontFamily="@font/sf_ui_text_bold"
                             android:textColor="@color/black"
-                            android:textSize="8sp"
+                            android:textSize="12sp"
                             android:textAlignment="center"
                             />
 
@@ -316,7 +322,7 @@
                             android:text="Kutipan dari buku berjudul Tentang Kamu yang ditulis oleh Tereliye"
                             android:fontFamily="@font/sf_ui_text_regular"
                             android:textColor="@color/black"
-                            android:textSize="8sp"
+                            android:textSize="12sp"
                             android:textAlignment="center"
                             />
 
@@ -324,8 +330,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardImagePenulis"
-                        android:layout_width="75dp"
-                        android:layout_height="108dp"
+                        android:layout_width="85dp"
+                        android:layout_height="120dp"
                         app:cardCornerRadius="8dp"
                         android:layout_alignParentEnd="true"
                         >
@@ -382,6 +388,7 @@
                 android:id="@+id/rvBundling"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:orientation="horizontal"
                 android:layout_below="@id/btnMoreBundling"
                 android:layout_marginVertical="15dp"
                 />

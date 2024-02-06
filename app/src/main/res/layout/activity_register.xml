@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".authentication.RegisterActivity"
     android:paddingHorizontal="20dp"
-    android:paddingVertical="35dp"
     >
 
     <ScrollView
@@ -25,7 +24,8 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="51dp"
+                android:layout_marginTop="35dp"
                 android:src="@drawable/kubuku_logo_horizontal" />
 
             <LinearLayout
@@ -222,6 +222,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
+                    android:layout_marginBottom="35dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     >
