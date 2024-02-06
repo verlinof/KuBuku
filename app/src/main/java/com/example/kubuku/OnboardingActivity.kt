@@ -16,6 +16,7 @@ import com.example.kubuku.adapter.SliderAdapter
 import com.example.kubuku.authentication.LoginActivity
 import com.example.kubuku.authentication.RegisterActivity
 import com.example.kubuku.databinding.ActivityOnboardingBinding
+import com.example.kubuku.page.DashboardActivity
 
 class OnboardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnboardingBinding
