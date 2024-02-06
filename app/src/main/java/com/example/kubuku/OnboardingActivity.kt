@@ -62,12 +62,12 @@ class OnboardingActivity : AppCompatActivity() {
 
             spannableString.setSpan(
                 StyleSpan(Typeface.BOLD),
-                3, 13,
+                3, 14,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
             spannableString.setSpan(
                 StyleSpan(Typeface.BOLD),
-                18, 22,
+                18, 23,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
             spannableString.setSpan(

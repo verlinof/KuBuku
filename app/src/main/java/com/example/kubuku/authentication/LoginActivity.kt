@@ -3,7 +3,6 @@ package com.example.kubuku.authentication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.renderscript.ScriptGroup.Input
 import android.text.InputType
 import android.view.View
 import android.widget.Toast

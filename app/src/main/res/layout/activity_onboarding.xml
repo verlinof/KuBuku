@@ -62,6 +62,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="By Registering or Login you have agreed to these Terms and Conditions."
         android:textSize="15sp"
+        android:textColor="@color/black"
         android:textAlignment="center"
         />
 
