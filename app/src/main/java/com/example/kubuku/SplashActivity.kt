@@ -9,24 +9,25 @@ import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
-    private val auth = FirebaseAuth.getInstance()
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        auth = FirebaseAuth.getInstance()
         val currentUser = auth.currentUser
-
-        if(currentUser != null) {
-            startActivity(Intent(this@SplashActivity, DashboardActivity::class.java))
-            finishAffinity()
-        }
 
         with(binding) {
             ivLogo.alpha = 0f
             ivLogo.animate().setDuration(1500).alpha(1f).withEndAction() {
-                startActivity(Intent(this@SplashActivity, OnboardingActivity::class.java))
-                finish()
+                if(currentUser != null) {
+                    startActivity(Intent(this@SplashActivity, DashboardActivity::class.java))
+                    finishAffinity()
+                }else {
+                    startActivity(Intent(this@SplashActivity, OnboardingActivity::class.java))
+                    finish()
+                }
             }
         }
     }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivGenreImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/img_tere_liye"
+        />
+
+    <TextView
+        android:id="@+id/tvGenreTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivGenreImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:text="Romantic"
+        android:textSize="12sp"
+        android:fontFamily="@font/sf_ui_text_regular"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>

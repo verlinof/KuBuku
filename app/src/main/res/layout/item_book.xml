@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="20dp"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBookImage"
+        android:layout_width="81dp"
+        android:layout_height="123dp"
+        android:layout_marginBottom="3dp"
+        app:cardCornerRadius="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/ivBookImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvBookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bumi"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/sf_ui_text_bold"
+        android:layout_below="@id/cardBookImage"
+        />
+
+    <TextView
+        android:id="@+id/tvBookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBookTitle"
+        android:fontFamily="@font/sf_ui_text_regular_italic"
+        android:text="By Tere Liye"
+        android:textSize="10sp"
+        android:textColor="@color/black"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignEnd="@id/cardBookImage"
+        android:layout_below="@id/cardBookImage"
+        android:layout_alignTop="@id/tvBookTitle"
+        android:layout_alignBottom="@id/tvBookTitle"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_star_yellow"
+            />
+
+        <TextView
+            android:id="@+id/tvBookRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.0"
+            android:textSize="10sp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

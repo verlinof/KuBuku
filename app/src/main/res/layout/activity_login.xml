@@ -27,9 +27,9 @@
 
         <ImageView
             android:id="@+id/ivLogoHorizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
             android:layout_gravity="center_horizontal"
-            android:layout_height="wrap_content"
             android:src="@drawable/kubuku_logo_horizontal"
             />
 
