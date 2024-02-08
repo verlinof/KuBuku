@@ -9,8 +9,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="35dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,6 +18,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="35dp"
             android:orientation="vertical"
             >
 
@@ -225,7 +225,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_marginVertical="15dp">
 
                 <!-- Section Title -->
@@ -343,8 +342,80 @@
                 android:src="@drawable/detail_produk_devider"
                 />
 
-        </LinearLayout>
+            <!-- Discover -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                >
 
+                <!-- Other Books -->
+                <TextView
+                    android:id="@+id/tvOtherBooksTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:text="Buku Tere Liye Lainnya"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/btnMoreOtherBooks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:layout_alignBottom="@+id/tvOtherBooksTitle"
+                    android:clickable="true"
+                    android:text="Lihat lebih banyak"
+                    android:textSize="11sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvOtherBooks"
+                    android:layout_width="match_parent"
+                    android:layout_height="162dp"
+                    android:layout_marginTop="25dp"
+                    android:orientation="horizontal"
+                    />
+
+                <!-- Bundling -->
+                <TextView
+                    android:id="@+id/tvOtherBundlingTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:text="Bundling Lebih Hemat"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_below="@+id/rvOtherBooks"
+                    />
+
+                <TextView
+                    android:id="@+id/btnMoreOtherBundling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:layout_alignBottom="@+id/tvOtherBundlingTitle"
+                    android:clickable="true"
+                    android:text="Lihat lebih banyak"
+                    android:textSize="11sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBundling"
+                    android:layout_width="match_parent"
+                    android:layout_height="162dp"
+                    android:layout_below="@id/btnMoreOtherBundling"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </ScrollView>
 
