@@ -32,8 +32,16 @@ class BookAdapter(private val bookList: ArrayList<Book>)
             .load(currentItem.image)
             .centerCrop()
             .into(holder.bookImage)
-        holder.bookTitle.text = currentItem.title
-        holder.bookAuthor.text = "by ${currentItem.author}"
+        if(currentItem.title.length > 7) {
+            holder.bookTitle.text = currentItem.title.slice(0..7) + "..."
+        }else {
+            holder.bookTitle.text = currentItem.title
+        }
+        if(currentItem.author.length > 12) {
+            holder.bookAuthor.text = "by ${currentItem.author.slice(0..12)}..."
+        } else{
+            holder.bookAuthor.text = "by ${currentItem.author}"
+        }
         holder.bookRating.text = currentItem.rating.toString()
     }
 

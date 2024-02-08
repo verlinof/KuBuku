@@ -12,6 +12,7 @@ import com.example.kubuku.helper.HelperSharedPreferences
 import com.example.kubuku.models.Book
 import com.example.uaspapb.user.BookAdapter
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -27,6 +28,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater)
         helperSharedPreferences = HelperSharedPreferences(requireContext())
 
+        //Function Call
         fetchBookData()
 
         with(binding) {
@@ -35,34 +37,37 @@ class HomeFragment : Fragment() {
             tvUsername.text = "Halo, $username"
         }
 
-        // Inflate the layout for this fragment
         return binding.root
     }
 
     //Function
     private fun fetchBookData() {
         firestore.collection("books")
+            .orderBy("totalOrder", Query.Direction.DESCENDING)
+            .limit(5)
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     val book = document.toObject(Book::class.java)
                     bookList.add(book)
                 }
-                with(binding) {
-                    rvFavorite.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                    rvFavorite.setHasFixedSize(true)
-
-                    val adapter = BookAdapter(bookList)
-                    rvFavorite.adapter = adapter
-                    adapter.setOnItemClickListener(object : BookAdapter.onItemClickListener {
-                        override fun onItemClick(position: Int) {
-
-                        }
-
-                    })
-                }
-
+            updateUi()
             }
+    }
+
+    private fun updateUi() {
+        with(binding) {
+            rvFavorite.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            rvFavorite.setHasFixedSize(true)
+
+            val adapter = BookAdapter(bookList)
+            rvFavorite.adapter = adapter
+            adapter.setOnItemClickListener(object : BookAdapter.onItemClickListener {
+                override fun onItemClick(position: Int) {
+
+                }
+            })
+        }
     }
 
 }
