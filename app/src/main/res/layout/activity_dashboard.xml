@@ -15,8 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/navbarDashboard"
-        android:paddingVertical="15dp"
-        android:paddingHorizontal="15dp"
         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -6,13 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.kubuku.R
 import com.example.kubuku.databinding.FragmentHomeBinding
 import com.example.kubuku.helper.HelperSharedPreferences
 import com.example.kubuku.models.Book
-import com.example.uaspapb.user.BookAdapter
+import com.example.kubuku.adapter.BookAdapter
+import com.example.kubuku.adapter.GenreAdapter
+import com.example.kubuku.models.Genre
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -20,6 +27,7 @@ class HomeFragment : Fragment() {
     //Firebase
     private val firestore = FirebaseFirestore.getInstance()
     private var bookList: ArrayList<Book> = ArrayList<Book> ()
+    private var genreList: ArrayList<Genre> = ArrayList<Genre> ()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +38,8 @@ class HomeFragment : Fragment() {
 
         //Function Call
         fetchBookData()
+        fetchGenreData()
+
 
         with(binding) {
             //Username
@@ -51,23 +61,46 @@ class HomeFragment : Fragment() {
                     val book = document.toObject(Book::class.java)
                     bookList.add(book)
                 }
-            updateUi()
+                //RecyclerView Adapter
+                with(binding) {
+                    rvFavorite.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                    rvFavorite.setHasFixedSize(true)
+
+                    val adapter = BookAdapter(bookList)
+                    rvFavorite.adapter = adapter
+                    adapter.setOnItemClickListener(object : BookAdapter.onItemClickListener {
+                        override fun onItemClick(position: Int) {
+
+                        }
+                    })
+                }
             }
     }
 
-    private fun updateUi() {
-        with(binding) {
-            rvFavorite.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            rvFavorite.setHasFixedSize(true)
-
-            val adapter = BookAdapter(bookList)
-            rvFavorite.adapter = adapter
-            adapter.setOnItemClickListener(object : BookAdapter.onItemClickListener {
-                override fun onItemClick(position: Int) {
-
+    private fun fetchGenreData() {
+        firestore.collection("genre")
+            .orderBy("genreTitle", Query.Direction.ASCENDING)
+            .limit(8)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val genre = document.toObject(Genre::class.java)
+                    genreList.add(genre)
                 }
-            })
-        }
+                //RecyclerView Adapter
+                with(binding) {
+                    rvGenre.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                    rvGenre.setHasFixedSize(true)
+
+                    val adapter = GenreAdapter(genreList)
+                    rvGenre.adapter = adapter
+                    adapter.setOnItemClickListener(object : GenreAdapter.onItemClickListener {
+                        override fun onItemClick(position: Int) {
+
+                        }
+                    })
+                }
+            }
     }
 
 }

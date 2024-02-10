@@ -1,4 +1,4 @@
-package com.example.uaspapb.user
+package com.example.kubuku.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -32,8 +32,8 @@ class BookAdapter(private val bookList: ArrayList<Book>)
             .load(currentItem.image)
             .centerCrop()
             .into(holder.bookImage)
-        if(currentItem.title.length > 7) {
-            holder.bookTitle.text = currentItem.title.slice(0..7) + "..."
+        if(currentItem.title.length > 6) {
+            holder.bookTitle.text = currentItem.title.slice(0..5) + "..."
         }else {
             holder.bookTitle.text = currentItem.title
         }
