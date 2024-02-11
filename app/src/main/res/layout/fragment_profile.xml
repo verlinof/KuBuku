@@ -84,99 +84,114 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
+            android:paddingHorizontal="20dp"
             android:paddingBottom="10dp"
             >
 
             <TextView
-                android:id="@+id/tvProfileMenuActivity"
+                android:id="@+id/tvActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
                 android:text="Aktivitas"
                 android:fontFamily="@font/sf_ui_text_bold"
                 android:textSize="16dp"
                 />
 
-            <!-- Transaksi -->
-            <ImageView
-                android:id="@+id/icProfileMenuTransaction"
-                android:layout_width="wrap_content"
+            <!-- Transaction -->
+            <LinearLayout
+                android:id="@+id/btnTransaction"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_profile_transaction"
-                android:layout_below="@id/tvProfileMenuActivity"
-                android:layout_alignStart="@id/tvProfileMenuActivity"
+                android:layout_below="@id/tvActivity"
+                android:layout_alignStart="@id/tvActivity"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvProfileMenuActivity"
-                android:layout_alignTop="@+id/icProfileMenuTransaction"
-                android:layout_alignBottom="@+id/icProfileMenuTransaction"
-                android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/icProfileMenuTransaction"
-                android:text="Transaksi"
+                android:orientation="horizontal"
                 android:clickable="true"
-                android:fontFamily="@font/sf_ui_text_regular"
-                android:textColor="@color/black"
-                android:textSize="14dp" />
+                >
 
-            <!-- Wishlist -->
-            <ImageView
-                android:id="@+id/icProfileMenuWishlist"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_transaction"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:text="Transaksi"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    />
+
+            </LinearLayout>
+
+            <!-- Wishlist 2 -->
+            <LinearLayout
+                android:id="@+id/btnWishlist2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_profile_wishlist"
-                android:layout_below="@id/icProfileMenuTransaction"
-                android:layout_alignStart="@id/icProfileMenuTransaction"
+                android:layout_below="@id/btnTransaction"
+                android:layout_alignStart="@id/btnTransaction"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvProfileMenuActivity"
-                android:layout_toEndOf="@id/icProfileMenuWishlist"
-                android:layout_alignTop="@+id/icProfileMenuWishlist"
-                android:layout_alignBottom="@+id/icProfileMenuWishlist"
+                android:orientation="horizontal"
                 android:clickable="true"
-                android:text="Favorit"
-                android:fontFamily="@font/sf_ui_text_regular"
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                />
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_wishlist"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:text="Favorit"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    />
+
+            </LinearLayout>
 
             <!-- Last Seen -->
-            <ImageView
+            <LinearLayout
                 android:id="@+id/btnProfileMenuLastSeen"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_profile_last_seen"
-                android:layout_below="@id/icProfileMenuWishlist"
-                android:layout_alignStart="@id/icProfileMenuWishlist"
+                android:layout_below="@id/btnWishlist2"
+                android:layout_alignStart="@id/btnWishlist2"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvProfileMenuActivity"
-                android:layout_toEndOf="@id/btnProfileMenuLastSeen"
-                android:layout_alignTop="@+id/btnProfileMenuLastSeen"
-                android:layout_alignBottom="@+id/btnProfileMenuLastSeen"
+                android:orientation="horizontal"
                 android:clickable="true"
-                android:text="Produk Terakhir Dilihat"
-                android:fontFamily="@font/sf_ui_text_regular"
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                />
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_last_seen"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:text="Produk Terakhir Dilihat"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    />
+
+            </LinearLayout>
 
         </RelativeLayout>
 
@@ -184,126 +199,146 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:paddingHorizontal="20dp"
             android:paddingBottom="20dp"
             >
 
             <TextView
-                android:id="@+id/tvProfileMenuOther"
+                android:id="@+id/tvOther"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
                 android:text="Lainnya"
                 android:fontFamily="@font/sf_ui_text_bold"
                 android:textSize="16dp"
                 />
 
-            <!-- Settings -->
-            <ImageView
-                android:id="@+id/btnProfileMenuSettings"
-                android:layout_width="wrap_content"
+            <!-- Settings 2 -->
+            <LinearLayout
+                android:id="@+id/btnSettings2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_profile_settings"
-                android:layout_below="@id/tvProfileMenuOther"
-                android:layout_alignStart="@id/tvProfileMenuOther"
+                android:layout_below="@id/tvOther"
+                android:layout_alignStart="@id/tvOther"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvProfileMenuOther"
-                android:layout_toEndOf="@id/btnProfileMenuSettings"
-                android:layout_alignTop="@+id/btnProfileMenuSettings"
-                android:layout_alignBottom="@+id/btnProfileMenuSettings"
+                android:orientation="horizontal"
                 android:clickable="true"
-                android:text="Pengaturan Akun"
-                android:fontFamily="@font/sf_ui_text_regular"
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                />
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_settings"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:text="Pengaturan Akun"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    />
+
+            </LinearLayout>
 
             <!-- Chat Admin -->
-            <ImageView
-                android:id="@+id/btnProfileMenuCustomerService"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/btnCustomerService"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_profile_customer_service"
-                android:layout_below="@id/btnProfileMenuSettings"
-                android:layout_alignStart="@id/btnProfileMenuSettings"
+                android:layout_below="@id/btnSettings2"
+                android:layout_alignStart="@id/btnSettings2"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvProfileMenuOther"
-                android:layout_toEndOf="@id/btnProfileMenuCustomerService"
-                android:layout_alignTop="@+id/btnProfileMenuCustomerService"
-                android:layout_alignBottom="@+id/btnProfileMenuCustomerService"
+                android:orientation="horizontal"
                 android:clickable="true"
-                android:text="Chat Admin"
-                android:fontFamily="@font/sf_ui_text_regular"
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                />
+                >
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_customer_service"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:text="Chat Admin"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    />
+
+            </LinearLayout>
+<!--
             <!-- Help Center -->
-            <ImageView
-                android:id="@+id/btnProfileHelp"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/btnHelp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_profile_help"
-                android:layout_below="@id/btnProfileMenuCustomerService"
-                android:layout_alignStart="@id/btnProfileMenuCustomerService"
+                android:layout_below="@id/btnCustomerService"
+                android:layout_alignStart="@id/btnCustomerService"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvProfileMenuOther"
-                android:layout_toEndOf="@id/btnProfileHelp"
-                android:layout_alignTop="@+id/btnProfileHelp"
-                android:layout_alignBottom="@+id/btnProfileHelp"
+                android:orientation="horizontal"
                 android:clickable="true"
-                android:text="Pusat Bantuan"
-                android:fontFamily="@font/sf_ui_text_regular"
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                />
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_help"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:text="Pusat Bantuan"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    />
+
+            </LinearLayout>
 
             <!-- Log Out -->
-            <ImageView
-                android:id="@+id/btnProfileMenuLogOut"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/btnLogOut"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_profile_log_out"
-                android:layout_below="@id/btnProfileHelp"
-                android:layout_alignStart="@id/btnProfileHelp"
+                android:layout_below="@id/btnHelp"
+                android:layout_alignStart="@id/btnHelp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvProfileMenuOther"
-                android:layout_toEndOf="@id/btnProfileMenuLogOut"
-                android:layout_alignTop="@+id/btnProfileMenuLogOut"
-                android:layout_alignBottom="@+id/btnProfileMenuLogOut"
+                android:orientation="horizontal"
                 android:clickable="true"
-                android:text="Keluar"
-                android:fontFamily="@font/sf_ui_text_regular"
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                />
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_log_out"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:text="Keluar"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    />
+
+            </LinearLayout>
 
         </RelativeLayout>
 
