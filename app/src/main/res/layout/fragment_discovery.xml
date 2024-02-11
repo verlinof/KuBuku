@@ -1,14 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.DiscoveryFragment">
+    tools:context=".fragment.DiscoveryFragment"
+    android:scrollbars="none"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <RelativeLayout
+            android:id="@+id/headerSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="15dp"
+            >
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/circle_bg_primary"
+                android:src="@drawable/ic_back_24"
+                android:layout_marginEnd="12dp"
+                />
+
+            <TextView
+                android:id="@+id/tvDetailProduk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Pencarian"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/btnBack"
+                android:textSize="17sp"
+                />
+
+            <ImageView
+                android:id="@+id/btnNotification"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/btnCart"
+                android:layout_alignTop="@id/btnBack"
+                android:layout_alignBottom="@id/btnBack"
+                android:src="@drawable/ic_notification"
+                android:layout_marginEnd="14dp"
+                />
+
+            <ImageView
+                android:id="@+id/btnCart"
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:layout_toLeftOf="@id/btnWishlist"
+                android:layout_alignTop="@id/btnBack"
+                android:layout_alignBottom="@id/btnBack"
+                android:src="@drawable/ic_cart"
+                android:layout_marginEnd="14dp"
+                />
+
+            <ImageView
+                android:id="@+id/btnWishlist"
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/btnBack"
+                android:layout_alignBottom="@id/btnBack"
+                android:src="@drawable/ic_wishlist"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/searchSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headerSection"
+            android:background="@color/bg_secondary"
+            >
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="15dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp"
+                android:background="@drawable/rounded_white_edittext"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/sf_ui_text_regular"
+                android:hint="Rumah Teduh"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Terakhir Dilihat"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_below="@id/etSearch"
+                />
+
+            <TextView
+                android:id="@+id/btnTerakhirDilihat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Lihat lebih banyak"
+                android:textSize="11sp"
+                android:layout_below="@id/etSearch"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTerakhirDilihat"
+                android:layout_width="match_parent"
+                android:layout_height="162dp"
+                android:layout_marginHorizontal="15dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/btnTerakhirDilihat"
+                android:layout_marginVertical="15dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recomendationSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchSection"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Genre"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/btnMoreGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:clickable="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Lihat lebih banyak"
+                android:textSize="11sp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGenre"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/btnMoreGenre"
+                android:layout_marginVertical="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Buku Terbaru"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_below="@id/rvGenre"
+                />
+
+            <TextView
+                android:id="@+id/btnMoreNewBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:clickable="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Lihat lebih banyak"
+                android:textSize="11sp"
+                android:layout_below="@id/rvGenre"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNewBook"
+                android:layout_width="match_parent"
+                android:layout_height="162dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/btnMoreNewBook"
+                android:layout_marginVertical="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Penulis"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_below="@id/rvNewBook"
+                />
+
+            <TextView
+                android:id="@+id/btnMoreAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:clickable="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Lihat lebih banyak"
+                android:textSize="11sp"
+                android:layout_below="@id/rvNewBook"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/btnMoreAuthor"
+                android:layout_marginVertical="15dp"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
