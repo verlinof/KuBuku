@@ -1,7 +1,7 @@
 package com.example.kubuku.models
 
 data class Genre(
-    val id: String = "",
+    var id: String = "",
     val genreImage: String = "",
     val genreTitle: String = ""
 )

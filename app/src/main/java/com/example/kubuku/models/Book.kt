@@ -1,7 +1,7 @@
 package com.example.kubuku.models
 
 data class Book(
-    val id: String = "",
+    var id: String = "",
     val author: String = "",
     val description: String = "",
     val image: String = "",

@@ -1,5 +1,6 @@
 package com.example.kubuku.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.example.kubuku.models.Book
 import com.example.kubuku.adapter.BookAdapter
 import com.example.kubuku.adapter.GenreAdapter
 import com.example.kubuku.models.Genre
+import com.example.kubuku.page.DetailBookActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.coroutines.CoroutineScope
@@ -40,7 +42,6 @@ class HomeFragment : Fragment() {
         fetchBookData()
         fetchGenreData()
 
-
         with(binding) {
             //Username
             val username = helperSharedPreferences.getUsername()
@@ -58,7 +59,8 @@ class HomeFragment : Fragment() {
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    val book = document.toObject(Book::class.java)
+                    var book = document.toObject(Book::class.java)
+                    book.id = document.id
                     bookList.add(book)
                 }
                 //RecyclerView Adapter
@@ -70,7 +72,9 @@ class HomeFragment : Fragment() {
                     rvFavorite.adapter = adapter
                     adapter.setOnItemClickListener(object : BookAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
-
+                            val intent = Intent(requireContext(), DetailBookActivity::class.java)
+                            intent.putExtra("EXT_ID", bookList[position].id)
+                            startActivity(intent)
                         }
                     })
                 }
@@ -84,7 +88,8 @@ class HomeFragment : Fragment() {
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    val genre = document.toObject(Genre::class.java)
+                    var genre = document.toObject(Genre::class.java)
+                    genre.id = document.id
                     genreList.add(genre)
                 }
                 //RecyclerView Adapter
