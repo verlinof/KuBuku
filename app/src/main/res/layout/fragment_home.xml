@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginVertical="15dp"
-    android:layout_marginHorizontal="15dp"
-    tools:context=".fragment.HomeFragment">
+    android:paddingHorizontal="15dp"
+    tools:context=".fragment.HomeFragment"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,13 +16,15 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginVertical="15dp"
+            >
 
             <RelativeLayout
                 android:id="@+id/headerSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="15dp"
+                android:paddingBottom="15dp"
                 >
 
                 <TextView
@@ -221,6 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:clickable="true"
                 android:fontFamily="@font/sf_ui_text_bold"
                 android:text="Lihat lebih banyak"
                 android:textSize="11sp"
@@ -230,7 +233,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvGenre"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="70dp"
                 android:orientation="horizontal"
                 android:layout_below="@id/btnMoreGenre"
                 android:layout_marginVertical="15dp"
@@ -252,6 +255,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:clickable="true"
                 android:fontFamily="@font/sf_ui_text_bold"
                 android:text="Lihat lebih banyak"
                 android:textSize="11sp"
@@ -377,6 +381,7 @@
                 android:id="@+id/btnMoreBundling"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:layout_alignParentEnd="true"
                 android:fontFamily="@font/sf_ui_text_bold"
                 android:text="Lihat lebih banyak"
@@ -390,7 +395,7 @@
                 android:layout_height="150dp"
                 android:orientation="horizontal"
                 android:layout_below="@id/btnMoreBundling"
-                android:layout_marginVertical="15dp"
+                android:layout_marginTop="15dp"
                 />
 
         </RelativeLayout>

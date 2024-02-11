@@ -36,11 +36,10 @@
                     android:background="@drawable/circle_bg_primary"
                     android:src="@drawable/ic_back_24"
                     android:layout_marginEnd="12dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    />
 
                 <TextView
-                    android:id="@+id/tvDetailProduk"
+                    android:id="@+id/tvPageTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -53,12 +52,11 @@
 
             <!-- Book's Main Image -->
             <ImageView
-                android:id="@+id/ivBuku"
+                android:id="@+id/ivBookImage"
                 android:layout_width="match_parent"
                 android:layout_height="284dp"
                 android:paddingVertical="20dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/img_contoh_buku"
                 />
 
             <!-- Book's Detail 1 -->
@@ -68,10 +66,10 @@
 
                 <!-- Book's Title and Author -->
                 <TextView
-                    android:id="@+id/tvJudulBuku"
+                    android:id="@+id/tvBookTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bumi"
+                    android:text="Title"
                     android:fontFamily="@font/sf_ui_text_bold"
                     android:textSize="24dp"
                     />
@@ -79,7 +77,7 @@
                     android:id="@+id/tvBy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvJudulBuku"
+                    android:layout_below="@+id/tvBookTitle"
                     android:text="by "
                     android:fontFamily="@font/sf_ui_text_regular_italic"
                     android:textSize="13dp"
@@ -88,21 +86,21 @@
                     android:id="@+id/tvAuthor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvJudulBuku"
+                    android:layout_below="@+id/tvBookTitle"
                     android:layout_toRightOf="@+id/tvBy"
-                    android:text="Tere Liye"
+                    android:text="Author"
                     android:fontFamily="@font/sf_ui_text_regular_italic"
                     android:textSize="13dp"
                     />
 
                 <!-- Button "Add to Wishlist" -->
-                <ImageButton
+                <ImageView
                     android:id="@+id/btnFavUnclicked"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_favorite_unclicked"
-                    android:backgroundTint="@color/white"
+                    android:src="@drawable/ic_wishlist"
                     />
 
                 <!-- Book's Rating -->
@@ -123,53 +121,53 @@
                     android:layout_below="@+id/tvRating"
                     >
                     <ImageView
-                        android:id="@+id/ivStarYellow1"
+                        android:id="@+id/ivStar1"
                         android:layout_width="11dp"
                         android:layout_height="11dp"
-                        android:src="@drawable/ic_star_yellow"
+                        android:src="@drawable/ic_star_blank"
                         android:layout_centerVertical="true"
                         />
                     <ImageView
-                        android:id="@+id/ivStarYellow2"
+                        android:id="@+id/ivStar2"
                         android:layout_width="11dp"
                         android:layout_height="11dp"
-                        android:src="@drawable/ic_star_yellow"
-                        android:layout_toRightOf="@+id/ivStarYellow1"
+                        android:src="@drawable/ic_star_blank"
+                        android:layout_toRightOf="@+id/ivStar1"
                         android:layout_centerVertical="true"
                         />
                     <ImageView
-                        android:id="@+id/ivStarYellow3"
+                        android:id="@+id/ivStar3"
                         android:layout_width="11dp"
                         android:layout_height="11dp"
-                        android:src="@drawable/ic_star_yellow"
-                        android:layout_toRightOf="@+id/ivStarYellow2"
+                        android:src="@drawable/ic_star_blank"
+                        android:layout_toRightOf="@+id/ivStar2"
                         android:layout_centerVertical="true"
                         />
                     <ImageView
-                        android:id="@+id/ivStarYellow4"
+                        android:id="@+id/ivStar4"
                         android:layout_width="11dp"
                         android:layout_height="11dp"
-                        android:src="@drawable/ic_star_yellow"
-                        android:layout_toRightOf="@+id/ivStarYellow3"
+                        android:src="@drawable/ic_star_blank"
+                        android:layout_toRightOf="@+id/ivStar3"
                         android:layout_centerVertical="true"
                         />
 
                     <ImageView
-                        android:id="@+id/ivStarYellow5"
+                        android:id="@+id/ivStar5"
                         android:layout_width="11dp"
                         android:layout_height="11dp"
-                        android:src="@drawable/ic_star_yellow"
-                        android:layout_toRightOf="@+id/ivStarYellow4"
+                        android:src="@drawable/ic_star_blank"
+                        android:layout_toRightOf="@+id/ivStar4"
                         android:layout_centerVertical="true"
                         />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/tvBookRating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
-                        android:layout_toRightOf="@+id/ivStarYellow5"
-                        android:text="5.0"
+                        android:layout_toRightOf="@+id/ivStar5"
+                        android:text="0.0"
                         android:fontFamily="@font/sf_ui_text_bold"
                         android:textSize="10dp"
                         />
@@ -182,7 +180,7 @@
                     android:id="@+id/tvPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/tvPrice2"
+                    android:layout_alignStart="@+id/tvPriceData"
                     android:layout_alignTop="@+id/tvRating"
                     android:layout_alignParentEnd="true"
                     android:text="Harga"
@@ -190,13 +188,13 @@
                     android:textSize="12dp"
                     />
                 <TextView
-                    android:id="@+id/tvPrice2"
+                    android:id="@+id/tvPriceData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvPrice"
                     android:layout_alignParentEnd="true"
                     android:fontFamily="@font/sf_ui_text_bold"
-                    android:text="Rp10.000/Hari"
+                    android:text="Rp0/Hari"
                     android:textSize="12dp" />
 
             </RelativeLayout>
@@ -238,7 +236,7 @@
 
                 <!-- Book's Title -->
                 <TextView
-                    android:id="@+id/tvDescBooksTitle"
+                    android:id="@+id/tvDescBookTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvDescTitle"
@@ -246,12 +244,13 @@
                     android:text="Judul:"
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:textSize="12dp" />
+
                 <TextView
-                    android:id="@+id/tvDescBooksTitle2"
+                    android:id="@+id/tvDescBookTitleData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tvDescBooksTitle"
-                    android:layout_alignTop="@+id/tvDescBooksTitle"
+                    android:layout_toRightOf="@+id/tvDescBookTitle"
+                    android:layout_alignTop="@+id/tvDescBookTitle"
                     android:layout_marginLeft="5dp"
                     android:text="Bumi"
                     android:fontFamily="@font/sf_ui_text_regular"
@@ -259,20 +258,20 @@
 
                 <!-- Author -->
                 <TextView
-                    android:id="@+id/tvDescBooksAuthor"
+                    android:id="@+id/tvDescBookAuthor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvDescBooksTitle"
+                    android:layout_below="@+id/tvDescBookTitle"
                     android:layout_marginVertical="2.5dp"
                     android:text="Penulis:"
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:textSize="12dp" />
                 <TextView
-                    android:id="@+id/tvDescBooksAuthor2"
+                    android:id="@+id/tvDescBookAuthorData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tvDescBooksAuthor"
-                    android:layout_alignTop="@+id/tvDescBooksAuthor"
+                    android:layout_toRightOf="@+id/tvDescBookAuthor"
+                    android:layout_alignTop="@+id/tvDescBookAuthor"
                     android:layout_marginLeft="5dp"
                     android:text="Tere Liye"
                     android:fontFamily="@font/sf_ui_text_regular"
@@ -283,35 +282,25 @@
                     android:id="@+id/tvDescTotalPage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvDescBooksAuthor"
+                    android:layout_below="@+id/tvDescBookAuthor"
                     android:layout_marginVertical="2.5dp"
                     android:text="Jumlah Halaman:"
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:textSize="12dp" />
                 <TextView
-                    android:id="@+id/tvDescTotalPage2"
+                    android:id="@+id/tvDescTotalPageData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/tvDescTotalPage"
                     android:layout_alignTop="@+id/tvDescTotalPage"
                     android:layout_marginLeft="5dp"
-                    android:text="440"
-                    android:fontFamily="@font/sf_ui_text_regular"
-                    android:textSize="12dp" />
-                <TextView
-                    android:id="@+id/tvDescTotalPage3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tvDescTotalPage2"
-                    android:layout_alignTop="@+id/tvDescTotalPage"
-                    android:layout_marginLeft="5dp"
-                    android:text="halaman"
+                    android:text="440 Halaman"
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:textSize="12dp" />
 
                 <!-- Sinopsis -->
                 <TextView
-                    android:id="@+id/tvDescSinopsis"
+                    android:id="@+id/tvSinopsis"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvDescTotalPage"
@@ -322,10 +311,10 @@
                     />
 
                 <TextView
-                    android:id="@+id/tvDescSinopsis2"
+                    android:id="@+id/tvDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvDescSinopsis"
+                    android:layout_below="@+id/tvSinopsis"
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Namaku Raib, usiaku 15 tahun, kelas sepuluh. Aku anak perempuan seperti kalian, adik-adik kalian, tetangga kalian. Aku punya dua kucing, namanya si Putih dan si Hitam. Mama dan papaku menyenangkan. Guru-guru di sekolahku seru.\n\nTeman-temanku baik dan kompak.\nAku sama seperti remaja kebanyakan, kecuali satu hal. Sesuatu yang kusimpan sendiri sejak kecil. Sesuatu yang menakjubkan.\n\nNamaku Raib. Dan aku bisa menghilang.\n\nBuku pertama dari serial 'BUMI'"
                     android:textAlignment="textStart"

@@ -1,17 +1,27 @@
 package com.example.kubuku.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.kubuku.R
 import com.example.kubuku.databinding.FragmentHomeBinding
 import com.example.kubuku.helper.HelperSharedPreferences
 import com.example.kubuku.models.Book
-import com.example.uaspapb.user.BookAdapter
+import com.example.kubuku.adapter.BookAdapter
+import com.example.kubuku.adapter.GenreAdapter
+import com.example.kubuku.models.Genre
+import com.example.kubuku.page.DetailBookActivity
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -19,6 +29,7 @@ class HomeFragment : Fragment() {
     //Firebase
     private val firestore = FirebaseFirestore.getInstance()
     private var bookList: ArrayList<Book> = ArrayList<Book> ()
+    private var genreList: ArrayList<Genre> = ArrayList<Genre> ()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +38,9 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater)
         helperSharedPreferences = HelperSharedPreferences(requireContext())
 
+        //Function Call
         fetchBookData()
+        fetchGenreData()
 
         with(binding) {
             //Username
@@ -35,19 +48,22 @@ class HomeFragment : Fragment() {
             tvUsername.text = "Halo, $username"
         }
 
-        // Inflate the layout for this fragment
         return binding.root
     }
 
     //Function
     private fun fetchBookData() {
         firestore.collection("books")
+            .orderBy("totalOrder", Query.Direction.DESCENDING)
+            .limit(5)
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    val book = document.toObject(Book::class.java)
+                    var book = document.toObject(Book::class.java)
+                    book.id = document.id
                     bookList.add(book)
                 }
+                //RecyclerView Adapter
                 with(binding) {
                     rvFavorite.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                     rvFavorite.setHasFixedSize(true)
@@ -56,12 +72,39 @@ class HomeFragment : Fragment() {
                     rvFavorite.adapter = adapter
                     adapter.setOnItemClickListener(object : BookAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
-
+                            val intent = Intent(requireContext(), DetailBookActivity::class.java)
+                            intent.putExtra("EXT_ID", bookList[position].id)
+                            startActivity(intent)
                         }
-
                     })
                 }
+            }
+    }
 
+    private fun fetchGenreData() {
+        firestore.collection("genre")
+            .orderBy("genreTitle", Query.Direction.ASCENDING)
+            .limit(8)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    var genre = document.toObject(Genre::class.java)
+                    genre.id = document.id
+                    genreList.add(genre)
+                }
+                //RecyclerView Adapter
+                with(binding) {
+                    rvGenre.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                    rvGenre.setHasFixedSize(true)
+
+                    val adapter = GenreAdapter(genreList)
+                    rvGenre.adapter = adapter
+                    adapter.setOnItemClickListener(object : GenreAdapter.onItemClickListener {
+                        override fun onItemClick(position: Int) {
+
+                        }
+                    })
+                }
             }
     }
 
