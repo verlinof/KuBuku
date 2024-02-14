@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kubuku.adapter.BookAdapter
 import com.example.kubuku.adapter.GenreAdapter
 import com.example.kubuku.databinding.FragmentDiscoveryBinding
+import com.example.kubuku.models.Author
 import com.example.kubuku.models.Book
 import com.example.kubuku.models.Genre
 import com.example.kubuku.page.DetailBookActivity
@@ -21,6 +22,7 @@ class DiscoveryFragment : Fragment() {
     private lateinit var firestore: FirebaseFirestore
     private var newBookList: ArrayList<Book> = ArrayList<Book>()
     private var genreList: ArrayList<Genre> = ArrayList<Genre> ()
+    private var authorList: ArrayList<Author> = ArrayList<Author> ()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +34,7 @@ class DiscoveryFragment : Fragment() {
         //Function Callback
         fetchNewBookData()
         fetchGenreData()
+        fetchAuthorData()
 
         // Inflate the layout for this fragment
         return binding.root
@@ -60,6 +63,33 @@ class DiscoveryFragment : Fragment() {
                             val intent = Intent(requireContext(), DetailBookActivity::class.java)
                             intent.putExtra("EXT_ID", newBookList[position].id)
                             startActivity(intent)
+                        }
+                    })
+                }
+            }
+    }
+
+    private fun fetchAuthorData() {
+        firestore.collection("authors")
+            .orderBy("genreTitle", Query.Direction.ASCENDING)
+            .limit(8)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    var author = document.toObject(Author::class.java)
+                    author.id = document.id
+                    authorList.add(author)
+                }
+                //RecyclerView Adapter
+                with(binding) {
+                    rvGenre.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                    rvGenre.setHasFixedSize(true)
+
+                    val adapter = GenreAdapter(genreList)
+                    rvGenre.adapter = adapter
+                    adapter.setOnItemClickListener(object : GenreAdapter.onItemClickListener {
+                        override fun onItemClick(position: Int) {
+
                         }
                     })
                 }

@@ -27,4 +27,14 @@ class HelperSharedPreferences(context: Context) {
         return sharedPreferences.getString("phone", "-")
     }
 
+    fun setProfilePicture(profilePicture: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString("profilePicture", profilePicture)
+        editor.apply()
+    }
+
+    fun getProfilePicture(): String? {
+        return sharedPreferences.getString("profilePicture", "none")
+    }
+
 }
