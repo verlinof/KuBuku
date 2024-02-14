@@ -24,7 +24,7 @@
                 android:id="@+id/headerSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="15dp"
+                android:paddingVertical="20dp"
                 >
 
                 <TextView
@@ -51,7 +51,7 @@
                 <ImageView
                     android:id="@+id/btnCart"
                     android:layout_width="20dp"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/btnWishlist"
                     android:layout_alignTop="@id/tvUsername"
                     android:layout_alignBottom="@id/tvUsername"
@@ -62,11 +62,11 @@
                 <ImageView
                     android:id="@+id/btnWishlist"
                     android:layout_width="18dp"
-                    android:layout_height="20dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignTop="@id/tvUsername"
                     android:layout_alignBottom="@id/tvUsername"
-                    android:src="@drawable/ic_wishlist"
+                    android:src="@drawable/ic_wishlist2"
                     />
 
             </RelativeLayout>

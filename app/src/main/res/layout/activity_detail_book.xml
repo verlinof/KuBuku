@@ -50,14 +50,24 @@
 
             </RelativeLayout>
 
-            <!-- Book's Main Image -->
-            <ImageView
-                android:id="@+id/ivBookImage"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="284dp"
                 android:paddingVertical="20dp"
-                android:scaleType="centerInside"
-                />
+                >
+
+                <!-- Book's Main Image -->
+                <ImageView
+                    android:id="@+id/ivBookImage"
+                    android:layout_width="161dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_height="233dp"
+                    android:scaleType="fitCenter"
+                    />
+
+            </RelativeLayout>
+
 
             <!-- Book's Detail 1 -->
             <RelativeLayout
@@ -100,7 +110,7 @@
                     android:layout_height="30dp"
                     android:clickable="true"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_wishlist"
+                    android:src="@drawable/ic_wishlist2"
                     />
 
                 <!-- Book's Rating -->
