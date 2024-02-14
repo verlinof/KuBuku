@@ -23,6 +23,7 @@
                 android:id="@+id/btnCart"
                 android:layout_width="20dp"
                 android:layout_height="18dp"
+                android:clickable="true"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/ic_cart"
                 />
@@ -31,8 +32,9 @@
                 android:id="@+id/btnWishlist"
                 android:layout_width="18dp"
                 android:layout_height="20dp"
+                android:clickable="true"
                 android:layout_toLeftOf="@id/btnCart"
-                android:src="@drawable/ic_wishlist"
+                android:src="@drawable/ic_wishlist2"
                 android:layout_marginEnd="14dp"
                 />
 
@@ -40,6 +42,7 @@
                 android:id="@+id/btnSettings"
                 android:layout_width="18dp"
                 android:layout_height="20dp"
+                android:clickable="true"
                 android:src="@drawable/ic_settings"
                 android:layout_toLeftOf="@+id/btnWishlist"
                 android:layout_marginEnd="14dp"
@@ -60,22 +63,22 @@
                 android:layout_below="@id/ivProfilePhoto"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="10dp"
-                android:text="Camila Aiko"
-                android:textColor="@color/white"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:textSize="16dp"
-                />
+                android:text="Username"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvProfileName"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="10dp"
-                android:text="camilcamilaa22@gmail.com"
-                android:textColor="@color/white"
                 android:fontFamily="@font/sf_ui_text_regular"
-                android:textSize="13dp"
+                android:text="example@mail.com"
+                android:textColor="@color/white"
+                android:textSize="15sp"
                 />
 
         </RelativeLayout>
@@ -118,9 +121,9 @@
                 android:layout_alignBottom="@+id/icProfileMenuTransaction"
                 android:layout_centerInParent="true"
                 android:layout_toEndOf="@id/icProfileMenuTransaction"
-                android:text="Transaksi"
                 android:clickable="true"
                 android:fontFamily="@font/sf_ui_text_regular"
+                android:text="Transaksi"
                 android:textColor="@color/black"
                 android:textSize="14dp" />
 
