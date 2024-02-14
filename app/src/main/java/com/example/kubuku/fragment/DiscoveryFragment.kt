@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kubuku.R
 import com.example.kubuku.adapter.BookAdapter
 import com.example.kubuku.adapter.GenreAdapter
 import com.example.kubuku.databinding.FragmentDiscoveryBinding
@@ -56,7 +57,7 @@ class DiscoveryFragment : Fragment() {
                     rvNewBook.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                     rvNewBook.setHasFixedSize(true)
 
-                    val adapter = BookAdapter(newBookList)
+                    val adapter = BookAdapter(newBookList, R.layout.item_book)
                     rvNewBook.adapter = adapter
                     adapter.setOnItemClickListener(object : BookAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {

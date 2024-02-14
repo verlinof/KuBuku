@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kubuku.R
 import com.example.kubuku.databinding.FragmentHomeBinding
 import com.example.kubuku.helper.HelperSharedPreferences
 import com.example.kubuku.models.Book
@@ -14,14 +15,9 @@ import com.example.kubuku.adapter.BookAdapter
 import com.example.kubuku.adapter.GenreAdapter
 import com.example.kubuku.models.Genre
 import com.example.kubuku.page.DetailBookActivity
+import com.example.kubuku.page.FavoriteActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.CoroutineStart
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -46,6 +42,9 @@ class HomeFragment : Fragment() {
             //Username
             val username = helperSharedPreferences.getUsername()
             tvUsername.text = "Halo, $username"
+            btnWishlist.setOnClickListener {
+                startActivity(Intent(requireContext(), FavoriteActivity::class.java))
+            }
         }
 
         return binding.root
@@ -68,7 +67,7 @@ class HomeFragment : Fragment() {
                     rvFavorite.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                     rvFavorite.setHasFixedSize(true)
 
-                    val adapter = BookAdapter(bookList)
+                    val adapter = BookAdapter(bookList, R.layout.item_book)
                     rvFavorite.adapter = adapter
                     adapter.setOnItemClickListener(object : BookAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
