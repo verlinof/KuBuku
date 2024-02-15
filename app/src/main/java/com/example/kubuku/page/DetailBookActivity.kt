@@ -25,6 +25,9 @@ class DetailBookActivity : AppCompatActivity() {
             btnBack.setOnClickListener {
                 finish()
             }
+            btnAddToCart.setOnClickListener {
+
+            }
         }
     }
 

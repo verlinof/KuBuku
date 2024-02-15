@@ -31,8 +31,8 @@
                 android:id="@+id/btnWishlist"
                 android:layout_width="18dp"
                 android:layout_height="20dp"
-                android:layout_toLeftOf="@id/btnCart"
-                android:src="@drawable/ic_wishlist"
+                android:layout_toStartOf="@id/btnCart"
+                android:src="@drawable/ic_wishlist2"
                 android:layout_marginEnd="14dp"
                 />
 
@@ -41,12 +41,12 @@
                 android:layout_width="18dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_settings"
-                android:layout_toLeftOf="@+id/btnWishlist"
+                android:layout_toStartOf="@+id/btnWishlist"
                 android:layout_marginEnd="14dp"
                 />
 
             <ImageView
-                android:id="@+id/ivProfilePhoto"
+                android:id="@+id/ivProfilePicture"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_centerInParent="true"
@@ -57,26 +57,26 @@
                 android:id="@+id/tvProfileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ivProfilePhoto"
+                android:layout_below="@id/ivProfilePicture"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="10dp"
-                android:text="Camila Aiko"
+                android:text="Username"
                 android:textColor="@color/white"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 />
 
             <TextView
+                android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvProfileName"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="10dp"
-                android:text="camilcamilaa22@gmail.com"
-                android:textColor="@color/white"
                 android:fontFamily="@font/sf_ui_text_regular"
-                android:textSize="13dp"
-                />
+                android:text="example@mail.com"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
 
         </RelativeLayout>
 
@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:text="Aktivitas"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 />
 
             <!-- Transaction -->
@@ -114,7 +114,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_profile_transaction"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     />
 
                 <TextView
@@ -124,7 +124,7 @@
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Transaksi"
                     android:textColor="@color/black"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     />
 
             </LinearLayout>
@@ -146,7 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_profile_wishlist"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     />
 
                 <TextView
@@ -156,7 +156,7 @@
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Favorit"
                     android:textColor="@color/black"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     />
 
             </LinearLayout>
@@ -178,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_profile_last_seen"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     />
 
                 <TextView
@@ -188,7 +188,7 @@
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Produk Terakhir Dilihat"
                     android:textColor="@color/black"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     />
 
             </LinearLayout>
@@ -209,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:text="Lainnya"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 />
 
             <!-- Settings 2 -->
@@ -229,7 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_profile_settings"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     />
 
                 <TextView
@@ -239,7 +239,7 @@
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Pengaturan Akun"
                     android:textColor="@color/black"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     />
 
             </LinearLayout>
@@ -261,7 +261,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_profile_customer_service"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     />
 
                 <TextView
@@ -271,7 +271,7 @@
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Chat Admin"
                     android:textColor="@color/black"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     />
 
             </LinearLayout>
@@ -293,7 +293,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_profile_help"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     />
 
                 <TextView
@@ -303,7 +303,7 @@
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Pusat Bantuan"
                     android:textColor="@color/black"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     />
 
             </LinearLayout>
@@ -325,7 +325,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_profile_log_out"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     />
 
                 <TextView
@@ -335,7 +335,7 @@
                     android:fontFamily="@font/sf_ui_text_regular"
                     android:text="Keluar"
                     android:textColor="@color/black"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     />
 
             </LinearLayout>
