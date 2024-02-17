@@ -35,6 +35,9 @@ class FavoriteActivity : AppCompatActivity() {
         fetchBookData()
 
         with(binding) {
+            btnBack.setOnClickListener {
+                finish()
+            }
             btnBooks.setOnClickListener {
                 val color = ColorStateList.valueOf(ContextCompat.getColor(this@FavoriteActivity, R.color.bg_secondary))
                 btnBundlings.backgroundTintList = null
@@ -67,7 +70,7 @@ class FavoriteActivity : AppCompatActivity() {
                 }
                 //RecyclerView Adapter
                 with(binding) {
-                    rvData.layoutManager = GridLayoutManager(this@FavoriteActivity, 4 , LinearLayoutManager.VERTICAL, false)
+                    rvData.layoutManager = GridLayoutManager(this@FavoriteActivity, 3 , LinearLayoutManager.VERTICAL, false)
                     rvData.setHasFixedSize(true)
 
                     val adapter = BookAdapter(bookList, R.layout.item_book_grid)

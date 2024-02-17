@@ -45,13 +45,12 @@
                 android:layout_marginEnd="14dp"
                 />
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/ivProfilePicture"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/img_profile_photo"
-                />
+                android:src="@drawable/img_profile_photo" />
 
             <TextView
                 android:id="@+id/tvProfileName"

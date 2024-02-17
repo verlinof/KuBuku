@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.kubuku.OnboardingActivity
 import com.example.kubuku.R
@@ -42,6 +43,19 @@ class ProfileFragment : Fragment() {
                     .load(profilePicture)
                     .centerCrop()
                     .into(ivProfilePicture)
+            }
+
+            btnLogOut.setOnClickListener {
+                //Sign Out
+                auth.signOut()
+
+                //Sign Out Shared Prefference
+                helperSharedPreferences.signOut()
+
+                Toast.makeText(requireContext(), "Logout Berhasil", Toast.LENGTH_SHORT).show()
+
+                startActivity(Intent(requireContext(), OnboardingActivity::class.java))
+                activity?.finishAffinity()
             }
         }
 
