@@ -45,7 +45,7 @@
                 android:layout_marginEnd="14dp"
                 />
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/ivProfilePicture"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
@@ -59,10 +59,11 @@
                 android:layout_below="@id/ivProfilePicture"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/sf_ui_text_bold"
                 android:text="Username"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:textSize="16sp"
+                />
 
             <TextView
                 android:id="@+id/tvEmail"
@@ -212,7 +213,7 @@
 
             <!-- Settings 2 -->
             <LinearLayout
-                android:id="@+id/btnSettings2"
+                android:id="@+id/btnEditProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvOther"
@@ -247,8 +248,8 @@
                 android:id="@+id/btnCustomerService"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btnSettings2"
-                android:layout_alignStart="@id/btnSettings2"
+                android:layout_below="@id/btnEditProfile"
+                android:layout_alignStart="@id/btnEditProfile"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
@@ -273,8 +274,7 @@
                     />
 
             </LinearLayout>
-<!--
-            <!-- Help Center -->
+
             <LinearLayout
                 android:id="@+id/btnHelp"
                 android:layout_width="match_parent"

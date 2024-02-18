@@ -46,7 +46,7 @@
                 android:layout_alignTop="@id/btnBack"
                 android:layout_alignBottom="@id/btnBack"
                 android:gravity="center"
-                android:text="Selesai"
+                android:text="@string/text_selesai"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:fontFamily="@font/sf_ui_text_bold"
@@ -61,8 +61,8 @@
             android:paddingVertical="30dp"
             >
 
-            <ImageView
-                android:id="@+id/ivProfilePicture2"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfilePicture"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_centerHorizontal="true"
@@ -70,11 +70,11 @@
                 />
 
             <TextView
-                android:id="@+id/tvProfileName2"
+                android:id="@+id/tvProfileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/ivProfilePicture2"
+                android:layout_below="@+id/ivProfilePicture"
                 android:layout_marginTop="10dp"
                 android:text="Username"
                 android:textColor="@color/black"
@@ -82,28 +82,28 @@
                 android:textSize="24sp"
                 />
 
-            <ImageButton
+            <ImageView
+                android:id="@+id/btnUploadImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_edit_profile_picture"
-                android:background="none"
+                android:clickable="true"
                 android:layout_centerHorizontal="true"
-                android:layout_alignBottom="@+id/ivProfilePicture2"
-                android:layout_alignEnd="@+id/ivProfilePicture2"
+                android:layout_alignBottom="@+id/ivProfilePicture"
+                android:layout_alignEnd="@+id/ivProfilePicture"
                 />
 
             <TextView
-                android:id="@+id/tvEmail2"
+                android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvProfileName2"
+                android:layout_below="@id/tvProfileName"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/sf_ui_text_regular"
                 android:text="example@mail.com"
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                />
+                android:textSize="16sp" />
 
         </RelativeLayout>
 
@@ -129,18 +129,17 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_border_edittext"
                 android:paddingStart="30dp"
-                android:hint="Verlino"
+                android:hint="Username"
                 android:paddingVertical="5dp"
                 android:paddingHorizontal="10dp"
                 android:inputType="text"
-                android:selectAllOnFocus="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textSize="15dp"
                 android:fontFamily="@font/sf_ui_text_regular"
                 />
 
             <TextView
-                android:id="@+id/tvEmail"
+                android:id="@+id/tvEmail2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -154,7 +153,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_below="@+id/tvEmail"
+                android:layout_below="@+id/tvEmail2"
                 android:background="@drawable/rounded_border_edittext"
                 android:paddingStart="30dp"
                 android:hint="example@mail.com"
@@ -162,7 +161,6 @@
                 android:paddingHorizontal="10dp"
                 android:layout_marginTop="10dp"
                 android:inputType="textEmailAddress"
-                android:selectAllOnFocus="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textSize="15dp"
                 android:fontFamily="@font/sf_ui_text_regular"
@@ -191,7 +189,6 @@
                 android:paddingHorizontal="10dp"
                 android:layout_marginTop="10dp"
                 android:inputType="phone"
-                android:selectAllOnFocus="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textSize="15dp"
                 android:fontFamily="@font/sf_ui_text_regular"

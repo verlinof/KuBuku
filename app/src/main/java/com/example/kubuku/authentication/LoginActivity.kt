@@ -83,7 +83,8 @@ class LoginActivity : AppCompatActivity() {
                 if(user.exists()) {
                     val data = user.data
                     helperSharedPreferences.setUsername(data!!["username"].toString())
-                    helperSharedPreferences.setPhone(data!!["phone"].toString())
+                    helperSharedPreferences.setPhone(data["phone"].toString())
+//                    helperSharedPreferences.setProfilePicture(data["profilePicture"].toString())
                 }
             }
     }
