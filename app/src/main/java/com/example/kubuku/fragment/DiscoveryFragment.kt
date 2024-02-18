@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kubuku.R
+import com.example.kubuku.adapter.AuthorAdapter
 import com.example.kubuku.adapter.BookAdapter
 import com.example.kubuku.adapter.GenreAdapter
 import com.example.kubuku.databinding.FragmentDiscoveryBinding
@@ -14,6 +16,7 @@ import com.example.kubuku.models.Author
 import com.example.kubuku.models.Book
 import com.example.kubuku.models.Genre
 import com.example.kubuku.page.DetailBookActivity
+import com.example.kubuku.page.FavoriteActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
@@ -36,6 +39,21 @@ class DiscoveryFragment : Fragment() {
         fetchGenreData()
         fetchAuthorData()
 
+        with(binding) {
+            btnWishlist.setOnClickListener {
+                startActivity(Intent(requireContext(), FavoriteActivity::class.java))
+            }
+            etSearch.setOnClickListener {
+                //Fragment Transaction
+                val fragmentManager = requireActivity().supportFragmentManager
+
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.frameLayout, SearchFragment())
+                fragmentTransaction.addToBackStack("discovery")
+                fragmentTransaction.commit()
+            }
+        }
+
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -56,7 +74,7 @@ class DiscoveryFragment : Fragment() {
                     rvNewBook.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                     rvNewBook.setHasFixedSize(true)
 
-                    val adapter = BookAdapter(newBookList)
+                    val adapter = BookAdapter(newBookList, R.layout.item_book)
                     rvNewBook.adapter = adapter
                     adapter.setOnItemClickListener(object : BookAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
@@ -71,23 +89,25 @@ class DiscoveryFragment : Fragment() {
 
     private fun fetchAuthorData() {
         firestore.collection("authors")
-            .orderBy("genreTitle", Query.Direction.ASCENDING)
             .limit(8)
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    var author = document.toObject(Author::class.java)
-                    author.id = document.id
+                    var author = Author(
+                        id = document.id,
+                        authorImage = document["authorImage"].toString(),
+                        authorName = document["authorName"].toString()
+                    )
                     authorList.add(author)
                 }
                 //RecyclerView Adapter
                 with(binding) {
-                    rvGenre.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                    rvGenre.setHasFixedSize(true)
+                    rvAuthor.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                    rvAuthor.setHasFixedSize(true)
 
-                    val adapter = GenreAdapter(genreList)
-                    rvGenre.adapter = adapter
-                    adapter.setOnItemClickListener(object : GenreAdapter.onItemClickListener {
+                    val adapter = AuthorAdapter(authorList)
+                    rvAuthor.adapter = adapter
+                    adapter.setOnItemClickListener(object : AuthorAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
 
                         }
@@ -103,8 +123,11 @@ class DiscoveryFragment : Fragment() {
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    var genre = document.toObject(Genre::class.java)
-                    genre.id = document.id
+                    var genre = Genre(
+                        id = document.id,
+                        genreImage = document["genreImage"].toString(),
+                        genreTitle = document["genreTitle"].toString()
+                    )
                     genreList.add(genre)
                 }
                 //RecyclerView Adapter

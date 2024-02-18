@@ -12,6 +12,7 @@ import com.example.kubuku.page.DashboardActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -68,7 +69,7 @@ class RegisterActivity : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                     if(it.isSuccessful) {
-                        val user = Firebase.auth.currentUser
+                        val user = auth.currentUser
                         setUserDetails(user!!)
 
                         startActivity(Intent(this@RegisterActivity, DashboardActivity::class.java))
@@ -87,6 +88,8 @@ class RegisterActivity : AppCompatActivity() {
         userData["email"] = binding.etEmail.text.toString()
         userData["username"] = binding.etUsername.text.toString()
         userData["phone"] = binding.etPhone.text.toString()
+//        userData["profilePicture"] = "none"
+
 
         val firestore = FirebaseFirestore.getInstance()
         firestore.collection("users").document(user.uid)
@@ -94,6 +97,7 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 helperSharedPreferences.setUsername(binding.etUsername.text.toString())
                 helperSharedPreferences.setPhone(binding.etPhone.text.toString())
+//                helperSharedPreferences.setProfilePicture("none")
                 Toast.makeText(this@RegisterActivity, "Account has been created successfully", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener { e ->

@@ -7,6 +7,12 @@ class HelperSharedPreferences(context: Context) {
     private val sharedPreferences: SharedPreferences =
         context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
+    fun signOut() {
+        val editor = sharedPreferences.edit()
+        editor.clear()
+        editor.apply()
+    }
+
     fun setUsername(username: String) {
         val editor = sharedPreferences.edit()
         editor.putString("username", username)

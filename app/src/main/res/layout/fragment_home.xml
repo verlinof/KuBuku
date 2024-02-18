@@ -24,7 +24,7 @@
                 android:id="@+id/headerSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="20dp"
+                android:paddingBottom="20dp"
                 >
 
                 <TextView
@@ -225,7 +225,7 @@
                 android:layout_alignParentEnd="true"
                 android:clickable="true"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:text="Lihat lebih banyak"
+                android:text="@string/text_lihat_lebih_banyak"
                 android:textSize="11sp"
                 android:layout_below="@id/cardDeadline"
                 />
@@ -257,7 +257,7 @@
                 android:layout_alignParentEnd="true"
                 android:clickable="true"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:text="Lihat lebih banyak"
+                android:text="@string/text_lihat_lebih_banyak"
                 android:textSize="11sp"
                 android:layout_below="@id/rvGenre"
                 />
@@ -384,7 +384,7 @@
                 android:clickable="true"
                 android:layout_alignParentEnd="true"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:text="Lihat lebih banyak"
+                android:text="@string/text_lihat_lebih_banyak"
                 android:textSize="11sp"
                 android:layout_below="@id/cardPenulis"
                 />

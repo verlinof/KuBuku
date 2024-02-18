@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".page.FavoriteActivity"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="20dp"
+        >
+
+        <!-- Header -->
+        <RelativeLayout
+            android:id="@+id/headerSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/circle_bg_primary"
+                android:src="@drawable/ic_back_24"
+                android:layout_marginEnd="12dp"
+                />
+
+            <TextView
+                android:id="@+id/tvPageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Favorit"
+                android:layout_toRightOf="@+id/btnBack"
+                android:textSize="17dp" />
+
+        </RelativeLayout>
+        
+        <LinearLayout
+            android:id="@+id/navigationSection"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/headerSection"
+            android:layout_marginVertical="20dp"
+            android:orientation="horizontal"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBooks"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_border_edittext"
+                android:backgroundTint="@color/bg_secondary"
+                android:fontFamily="@font/sf_ui_text_regular"
+                android:textStyle="bold"
+                android:text="Buku"
+                android:layout_marginEnd="50dp"
+                android:textAllCaps="false"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBundlings"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border_edittext"
+                android:fontFamily="@font/sf_ui_text_regular"
+                android:textStyle="bold"
+                android:text="Paket"
+                android:textAllCaps="false"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                />
+
+        </LinearLayout>
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/navigationSection"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>

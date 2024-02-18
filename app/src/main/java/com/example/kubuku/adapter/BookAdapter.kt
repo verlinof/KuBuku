@@ -10,13 +10,14 @@ import com.bumptech.glide.Glide
 import com.example.kubuku.R
 import com.example.kubuku.models.Book
 
-class BookAdapter(private val bookList: ArrayList<Book>)
+class BookAdapter(private val bookList: ArrayList<Book>, layout: Int)
     :RecyclerView.Adapter<BookAdapter.BookAdapterViewHolder> (){
 
     private lateinit var mListener: onItemClickListener
+    private val layoutType = layout
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookAdapterViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(layoutType, parent, false)
 
         return BookAdapterViewHolder(itemView, mListener)
     }
@@ -37,8 +38,8 @@ class BookAdapter(private val bookList: ArrayList<Book>)
         }else {
             holder.bookTitle.text = currentItem.title
         }
-        if(currentItem.author.length > 12) {
-            holder.bookAuthor.text = "by ${currentItem.author.slice(0..12)}..."
+        if(currentItem.author.length > 10) {
+            holder.bookAuthor.text = "by ${currentItem.author.slice(0..10)}..."
         } else{
             holder.bookAuthor.text = "by ${currentItem.author}"
         }

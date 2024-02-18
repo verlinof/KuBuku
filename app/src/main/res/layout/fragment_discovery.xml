@@ -19,15 +19,6 @@
             android:layout_marginHorizontal="15dp"
             >
 
-            <ImageButton
-                android:id="@+id/btnBack"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:background="@drawable/circle_bg_primary"
-                android:src="@drawable/ic_back_24"
-                android:layout_marginEnd="12dp"
-                />
-
             <TextView
                 android:id="@+id/tvDetailProduk"
                 android:layout_width="wrap_content"
@@ -36,7 +27,6 @@
                 android:fontFamily="@font/sf_ui_text_bold"
                 android:text="Pencarian"
                 android:textColor="@color/black"
-                android:layout_toRightOf="@+id/btnBack"
                 android:textSize="17sp"
                 />
 
@@ -45,8 +35,8 @@
                 android:layout_width="18dp"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/btnCart"
-                android:layout_alignTop="@id/btnBack"
-                android:layout_alignBottom="@id/btnBack"
+                android:layout_alignTop="@id/tvDetailProduk"
+                android:layout_alignBottom="@id/tvDetailProduk"
                 android:src="@drawable/ic_notification"
                 android:layout_marginEnd="14dp"
                 />
@@ -56,8 +46,8 @@
                 android:layout_width="20dp"
                 android:layout_height="18dp"
                 android:layout_toLeftOf="@id/btnWishlist"
-                android:layout_alignTop="@id/btnBack"
-                android:layout_alignBottom="@id/btnBack"
+                android:layout_alignTop="@id/tvDetailProduk"
+                android:layout_alignBottom="@id/tvDetailProduk"
                 android:src="@drawable/ic_cart"
                 android:layout_marginEnd="14dp"
                 />
@@ -67,8 +57,8 @@
                 android:layout_width="18dp"
                 android:layout_height="20dp"
                 android:layout_alignParentEnd="true"
-                android:layout_alignTop="@id/btnBack"
-                android:layout_alignBottom="@id/btnBack"
+                android:layout_alignTop="@id/tvDetailProduk"
+                android:layout_alignBottom="@id/tvDetailProduk"
                 android:src="@drawable/ic_wishlist2"
                 />
 
@@ -95,6 +85,8 @@
                 android:drawablePadding="12dp"
                 android:fontFamily="@font/sf_ui_text_regular"
                 android:hint="Rumah Teduh"
+                android:focusable="false"
+                android:clickable="true"
                 />
 
             <TextView
@@ -116,7 +108,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="15dp"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:text="Lihat lebih banyak"
+                android:text="@string/text_lihat_lebih_banyak"
                 android:textSize="11sp"
                 android:layout_below="@id/etSearch"
                 />
@@ -159,7 +151,7 @@
                 android:layout_alignParentEnd="true"
                 android:clickable="true"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:text="Lihat lebih banyak"
+                android:text="@string/text_lihat_lebih_banyak"
                 android:textSize="11sp"
                 />
 
@@ -190,7 +182,7 @@
                 android:layout_alignParentEnd="true"
                 android:clickable="true"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:text="Lihat lebih banyak"
+                android:text="@string/text_lihat_lebih_banyak"
                 android:textSize="11sp"
                 android:layout_below="@id/rvGenre"
                 />
@@ -222,7 +214,7 @@
                 android:layout_alignParentEnd="true"
                 android:clickable="true"
                 android:fontFamily="@font/sf_ui_text_bold"
-                android:text="Lihat lebih banyak"
+                android:text="@string/text_lihat_lebih_banyak"
                 android:textSize="11sp"
                 android:layout_below="@id/rvNewBook"
                 />
@@ -230,7 +222,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvAuthor"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="70dp"
                 android:orientation="horizontal"
                 android:layout_below="@id/btnMoreAuthor"
                 android:layout_marginVertical="15dp"
