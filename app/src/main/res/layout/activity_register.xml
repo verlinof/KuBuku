@@ -171,14 +171,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="25dp"
-                    android:drawableLeft="@drawable/or_devider"
+                    android:drawableLeft="@drawable/devider_login"
                     android:drawablePadding="8dp"
                     android:text="Atau"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:fontFamily="@font/sf_ui_text_bold"
                     android:textSize="17sp"
-                    android:drawableRight="@drawable/or_devider"
+                    android:drawableRight="@drawable/devider_login"
                     />
 
                 <RelativeLayout

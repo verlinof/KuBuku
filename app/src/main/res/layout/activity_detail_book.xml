@@ -226,7 +226,7 @@
                 android:id="@+id/ivDevider1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/detail_produk_devider"
+                android:src="@drawable/devider_product_detail"
                 />
 
             <!-- Book's Detail 2 -->
@@ -338,7 +338,7 @@
                 android:id="@+id/ivDevider2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/detail_produk_devider"
+                android:src="@drawable/devider_product_detail"
                 />
 
             <!-- Discover -->
