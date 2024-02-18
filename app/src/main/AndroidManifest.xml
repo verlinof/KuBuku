@@ -49,6 +49,9 @@
             android:name=".page.EditProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".page.EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".page.DetailBookActivity"
             android:exported="false" />
         <activity
