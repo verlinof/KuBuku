@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransactionPickup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/rounded_bottom_bg"
+            android:padding="30dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/ic_back_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Kami menuju alamat penjemputan .."
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/payment_step_seven"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="20dp"
+            >
+
+            <TextView
+                android:id="@+id/tvDeliveryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menuju lokasi  penjemputan  bukumu!"
+                android:textAlignment="center"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:textSize="20dp"
+                android:layout_centerHorizontal="true"
+                />
+
+            <ImageView
+                android:id="@+id/ivDeliveryIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_delivery"
+                android:layout_below="@+id/tvDeliveryTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="30dp"
+                />
+
+            <TextView
+                android:id="@+id/tvDeliveryAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KOS PUTRI EDELWEIS I Jl. Pogung Lor No. 100, Sinduadi, Mlati"
+                android:fontFamily="@font/sf_ui_text_regular"
+                android:textSize="14sp"
+                android:layout_below="@id/ivDeliveryIcon"
+                android:background="@drawable/rounded_border_black"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                />
+
+            <Button
+                android:id="@+id/btnConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/bg_secondary"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:paddingVertical="12dp"
+                android:text="Buku Telah Dikembalikan"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

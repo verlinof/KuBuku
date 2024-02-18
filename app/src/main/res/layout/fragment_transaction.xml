@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.Transaction">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/headerSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="15dp"
+            >
+
+            <TextView
+                android:id="@+id/tvDetailProduk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Transaksi"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                />
+
+            <ImageView
+                android:id="@+id/btnNotification"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/btnCart"
+                android:layout_alignTop="@+id/tvDetailProduk"
+                android:layout_alignBottom="@+id/tvDetailProduk"
+                android:src="@drawable/ic_notification"
+                android:layout_marginEnd="14dp"
+                />
+
+            <ImageView
+                android:id="@+id/btnCart"
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:layout_toLeftOf="@id/btnWishlist"
+                android:layout_alignTop="@+id/tvDetailProduk"
+                android:layout_alignBottom="@+id/tvDetailProduk"
+                android:src="@drawable/ic_cart"
+                android:layout_marginEnd="14dp"
+                />
+
+            <ImageView
+                android:id="@+id/btnWishlist"
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/tvDetailProduk"
+                android:layout_alignBottom="@+id/tvDetailProduk"
+                android:src="@drawable/ic_wishlist2"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerSection"
+            android:padding="20dp"
+            >
+
+            <RelativeLayout
+                android:background="@drawable/rounded_border_orange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/ivLoanIcon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_loan"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvLoanTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sewa"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:textSize="15dp"
+                    android:layout_toRightOf="@id/ivLoanIcon"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25 Feb 2024"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:textColor="@color/grey"
+                    android:textSize="11dp"
+                    android:layout_toRightOf="@id/ivLoanIcon"
+                    android:layout_below="@+id/tvLoanTitle"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selesai"
+                    android:background="@drawable/rounded_orange_bg"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:layout_alignParentEnd="true"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/ivDevider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivLoanIcon"
+                    android:layout_marginVertical="10dp"
+                    android:src="@drawable/devider_payment"
+                    />
+
+                <ImageView
+                    android:id="@+id/ivBookImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img_book_bumi"
+                    android:layout_below="@id/ivDevider"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvBookTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bumi"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:layout_toRightOf="@id/ivBookImage"
+                    android:layout_alignTop="@id/ivBookImage"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTotalItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jumlah: 1"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:textColor="@color/grey"
+                    android:textSize="11dp"
+                    android:layout_toRightOf="@id/ivBookImage"
+                    android:layout_below="@+id/tvBookTitle"
+                    />
+
+                <TextView
+                    android:id="@+id/tvPeriod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Periode: Harian (28-29 Feb 2024)"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:textColor="@color/grey"
+                    android:textSize="11dp"
+                    android:layout_toRightOf="@id/ivBookImage"
+                    android:layout_below="@+id/tvTotalItem"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+1 item lainnya"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:textSize="10sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@id/ivBookImage"
+                    android:background="@drawable/rounded_border_orange"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/ivDeviderTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvPeriod"
+                    android:layout_marginVertical="10dp"
+                    android:src="@drawable/devider_payment"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/ivDeviderTwo"
+                    android:text="Total Belanja: Rp47.0000,00"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</FrameLayout>
