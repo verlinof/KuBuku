@@ -213,7 +213,7 @@
 
             <!-- Settings 2 -->
             <LinearLayout
-                android:id="@+id/btnSettings2"
+                android:id="@+id/btnEditProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvOther"
@@ -248,8 +248,8 @@
                 android:id="@+id/btnCustomerService"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btnSettings2"
-                android:layout_alignStart="@id/btnSettings2"
+                android:layout_below="@id/btnEditProfile"
+                android:layout_alignStart="@id/btnEditProfile"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal"

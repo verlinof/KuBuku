@@ -43,6 +43,15 @@ class DiscoveryFragment : Fragment() {
             btnWishlist.setOnClickListener {
                 startActivity(Intent(requireContext(), FavoriteActivity::class.java))
             }
+            etSearch.setOnClickListener {
+                //Fragment Transaction
+                val fragmentManager = requireActivity().supportFragmentManager
+
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.frameLayout, SearchFragment())
+                fragmentTransaction.addToBackStack("discovery")
+                fragmentTransaction.commit()
+            }
         }
 
         // Inflate the layout for this fragment
@@ -80,7 +89,6 @@ class DiscoveryFragment : Fragment() {
 
     private fun fetchAuthorData() {
         firestore.collection("authors")
-            .orderBy("genreTitle", Query.Direction.ASCENDING)
             .limit(8)
             .get()
             .addOnSuccessListener { documents ->
@@ -94,8 +102,8 @@ class DiscoveryFragment : Fragment() {
                 }
                 //RecyclerView Adapter
                 with(binding) {
-                    rvGenre.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                    rvGenre.setHasFixedSize(true)
+                    rvAuthor.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                    rvAuthor.setHasFixedSize(true)
 
                     val adapter = AuthorAdapter(authorList)
                     rvAuthor.adapter = adapter
@@ -120,7 +128,6 @@ class DiscoveryFragment : Fragment() {
                         genreImage = document["genreImage"].toString(),
                         genreTitle = document["genreTitle"].toString()
                     )
-                    genre.id = document.id
                     genreList.add(genre)
                 }
                 //RecyclerView Adapter

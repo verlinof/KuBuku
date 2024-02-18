@@ -16,7 +16,7 @@ class AuthorAdapter(private val authorList: ArrayList<Author>)
     private lateinit var mListener: onItemClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AuthorAdapterViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_genre, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_author, parent, false)
 
         return AuthorAdapterViewHolder(itemView, mListener)
     }

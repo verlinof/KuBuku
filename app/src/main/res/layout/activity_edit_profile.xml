@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".page.EditProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/circle_bg_primary"
+                android:src="@drawable/ic_back_24"
+                android:layout_marginEnd="12dp"
+                />
+
+            <TextView
+                android:id="@+id/tvPageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Edit Profil"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/btnBack"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/btnBack"
+                android:layout_alignBottom="@id/btnBack"
+                android:gravity="center"
+                android:text="@string/text_selesai"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:clickable="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="30dp"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfilePicture"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/img_profile_photo"
+                />
+
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/ivProfilePicture"
+                android:layout_marginTop="10dp"
+                android:text="Username"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:textSize="24sp"
+                />
+
+            <ImageView
+                android:id="@+id/btnUploadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit_profile_picture"
+                android:clickable="true"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/ivProfilePicture"
+                android:layout_alignEnd="@+id/ivProfilePicture"
+                />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvProfileName"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_ui_text_regular"
+                android:text="example@mail.com"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:textSize="16sp"
+                />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/tvName"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_border_edittext"
+                android:paddingStart="30dp"
+                android:hint="Username"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp"
+                android:inputType="text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="15dp"
+                android:fontFamily="@font/sf_ui_text_regular"
+                />
+
+            <TextView
+                android:id="@+id/tvEmail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Email"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:layout_below="@+id/etName"
+                android:textSize="16sp"
+                />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/tvEmail2"
+                android:background="@drawable/rounded_border_edittext"
+                android:paddingStart="30dp"
+                android:hint="example@mail.com"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:inputType="textEmailAddress"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="15dp"
+                android:fontFamily="@font/sf_ui_text_regular"
+                />
+
+            <TextView
+                android:id="@+id/tvTelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Nomor Telepon"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:layout_below="@+id/etEmail"
+                android:textSize="16sp"
+                />
+
+            <EditText
+                android:id="@+id/etTelp"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/tvTelp"
+                android:background="@drawable/rounded_border_edittext"
+                android:paddingStart="30dp"
+                android:hint="08XX XXXX XXXX"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:inputType="phone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="15dp"
+                android:fontFamily="@font/sf_ui_text_regular"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
