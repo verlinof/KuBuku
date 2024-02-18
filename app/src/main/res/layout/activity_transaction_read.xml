@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransactionLoan">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/rounded_bottom_bg"
+            android:padding="30dp"
+            >
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back_24"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilih atau tambahkan alamat  pengantaran bukumu.."
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/payment_step_six"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:gravity="center"
+            >
+
+            <RelativeLayout
+                android:id="@+id/addressSelected"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border_black"
+                android:padding="20dp"
+                >
+
+                <RadioButton
+                    android:id="@+id/rbAddress"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:text="KOS PUTRI EDELWEIS I Jl. Pogung Lor No. 100, Sinduadi, Mlati"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:gravity="top"
+                    android:checked="true"
+                    />
+
+                <TextView
+                    android:id="@+id/btnEditAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp"
+                    android:text="Edit"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:textColor="@color/bg_secondary"
+                    android:background="@drawable/rounded_border_orange"
+                    android:layout_alignParentEnd="true"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btnAddNewAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addressSelected"
+                android:layout_marginTop="25dp"
+                android:padding="30dp"
+                android:background="@drawable/rounded_orange_bg"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:text="Add New Address"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_plus"
+                    android:layout_alignParentEnd="true"
+                    />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/bg_secondary"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:layout_alignParentBottom="true"
+                android:paddingVertical="12dp"
+                android:text="Konfirmasi"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,42 @@
         android:theme="@style/Theme.KuBuku"
         tools:targetApi="31">
         <activity
+            android:name=".TransactionFinish"
+            android:exported="false" />
+        <activity
+            android:name=".TransactionBookReview"
+            android:exported="false" />
+        <activity
+            android:name=".TransactionPickup"
+            android:exported="false" />
+        <activity
+            android:name=".TransactionReturn"
+            android:exported="false" />
+        <activity
+            android:name=".TransactionLoan"
+            android:exported="false" />
+        <activity
+            android:name=".TransactionDelivery"
+            android:exported="false" />
+        <activity
+            android:name=".TransactionPayment"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentAddress"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentReview"
+            android:exported="false" />
+        <activity
+            android:name=".page.Payment"
+            android:exported="false" />
+        <activity
+            android:name=".Payment"
+            android:exported="false" />
+        <activity
+            android:name=".page.EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".page.EditProfileActivity"
             android:exported="false" />
         <activity

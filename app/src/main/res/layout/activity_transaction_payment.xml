@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransactionPayment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/rounded_bottom_bg"
+            android:padding="30dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/ic_back_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="Pilih metode pembayaran yang kamu inginkan .."
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/payment_step_three"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="15dp"
+            >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rekomendasi untukmu"
+                    android:textSize="14sp"
+                    />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gopay"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:clickable="true"
+                    android:checked="true"
+                    android:background="@drawable/rounded_grey_bg"
+                    android:layout_marginVertical="5dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ovo"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:clickable="true"
+                    android:checked="false"
+                    android:background="@drawable/rounded_grey_bg"
+                    android:layout_marginVertical="5dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E-Money"
+                    android:textSize="14sp"
+                    />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Shopeepay"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:clickable="true"
+                    android:checked="false"
+                    android:background="@drawable/rounded_grey_bg"
+                    android:layout_marginVertical="5dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dana"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:clickable="true"
+                    android:checked="false"
+                    android:background="@drawable/rounded_grey_bg"
+                    android:layout_marginVertical="5dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bank"
+                    android:textSize="14sp"
+                    />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BRI"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:clickable="true"
+                    android:checked="false"
+                    android:background="@drawable/rounded_grey_bg"
+                    android:layout_marginVertical="5dp"
+                    />
+
+            </RadioGroup>
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/bg_secondary"
+            android:fontFamily="@font/sf_ui_text_bold"
+            android:paddingVertical="12dp"
+            android:text="Konfirmasi"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
