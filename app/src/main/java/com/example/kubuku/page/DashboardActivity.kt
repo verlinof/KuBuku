@@ -8,6 +8,7 @@ import com.example.kubuku.databinding.ActivityDashboardBinding
 import com.example.kubuku.fragment.HomeFragment
 import com.example.kubuku.fragment.DiscoveryFragment
 import com.example.kubuku.fragment.ProfileFragment
+import com.example.kubuku.fragment.TransactionFragment
 
 class DashboardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
@@ -24,7 +25,7 @@ class DashboardActivity : AppCompatActivity() {
                 when(it.itemId) {
                     R.id.itemHome -> replaceFragment(HomeFragment())
                     R.id.itemDiscover -> replaceFragment(DiscoveryFragment())
-                    R.id.itemTransaction -> replaceFragment(DiscoveryFragment())
+                    R.id.itemTransaction -> replaceFragment(TransactionFragment())
                     R.id.itemProfile -> replaceFragment(ProfileFragment())
                     else -> {}
                 }
