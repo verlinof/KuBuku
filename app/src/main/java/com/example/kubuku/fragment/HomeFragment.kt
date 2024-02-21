@@ -12,7 +12,9 @@ import com.example.kubuku.databinding.FragmentHomeBinding
 import com.example.kubuku.helper.HelperSharedPreferences
 import com.example.kubuku.models.Book
 import com.example.kubuku.adapter.BookAdapter
+import com.example.kubuku.adapter.BundlingAdapter
 import com.example.kubuku.adapter.GenreAdapter
+import com.example.kubuku.models.Bundling
 import com.example.kubuku.models.Genre
 import com.example.kubuku.page.DetailBookActivity
 import com.example.kubuku.page.FavoriteActivity
@@ -25,6 +27,7 @@ class HomeFragment : Fragment() {
     //Firebase
     private val firestore = FirebaseFirestore.getInstance()
     private var bookList: ArrayList<Book> = ArrayList<Book> ()
+    private var bundlingList: ArrayList<Bundling> = ArrayList<Bundling> ()
     private var genreList: ArrayList<Genre> = ArrayList<Genre> ()
 
     override fun onCreateView(
@@ -37,6 +40,7 @@ class HomeFragment : Fragment() {
         //Function Call
         fetchBookData()
         fetchGenreData()
+        fetchBundlingData()
 
         with(binding) {
             //Username
@@ -101,6 +105,35 @@ class HomeFragment : Fragment() {
                     adapter.setOnItemClickListener(object : GenreAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
 
+                        }
+                    })
+                }
+            }
+    }
+
+    private fun fetchBundlingData() {
+        firestore.collection("bundlings")
+            .orderBy("totalOrder", Query.Direction.DESCENDING)
+            .limit(5)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    var bundling = document.toObject(Bundling::class.java)
+                    bundling.id = document.id
+                    bundlingList.add(bundling)
+                }
+                //RecyclerView Adapter
+                with(binding) {
+                    rvBundling.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                    rvBundling.setHasFixedSize(true)
+
+                    val adapter = BundlingAdapter(bundlingList, R.layout.item_bundling)
+                    rvBundling.adapter = adapter
+                    adapter.setOnItemClickListener(object : BundlingAdapter.onItemClickListener {
+                        override fun onItemClick(position: Int) {
+                            val intent = Intent(requireContext(), DetailBookActivity::class.java)
+                            intent.putExtra("EXT_ID", bundlingList[position].id)
+                            startActivity(intent)
                         }
                     })
                 }

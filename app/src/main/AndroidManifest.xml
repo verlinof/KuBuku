@@ -34,31 +34,20 @@
             android:name=".TransactionPayment"
             android:exported="false" />
         <activity
-            android:name=".PaymentAddress"
+            android:name=".TransactionAddress"
             android:exported="false" />
         <activity
-            android:name=".PaymentReview"
-            android:exported="false" />
-        <activity
-            android:name=".page.Payment"
-            android:exported="false" />
-        <activity
-            android:name=".Payment"
+            android:name=".TransactionReview"
             android:exported="false" />
         <activity
             android:name=".page.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".page.EditProfileActivity"
+            android:name=".page.FavoriteActivity"
             android:exported="false" />
         <activity
             android:name=".page.DetailBookActivity"
             android:exported="false" />
-        <activity
-            android:name=".page.DetailsBookActivity"
-            android:exported="false"
-            android:label="@string/title_activity_details_book"
-            android:theme="@style/Theme.KuBuku" />
         <activity
             android:name=".page.DashboardActivity"
             android:exported="false" />

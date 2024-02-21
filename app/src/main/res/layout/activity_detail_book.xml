@@ -355,7 +355,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:fontFamily="@font/sf_ui_text_bold"
-                    android:text="Buku Tere Liye Lainnya"
+                    android:text="Buku Author Lainnya"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     />
@@ -375,8 +375,8 @@
                     android:id="@+id/rvOtherBooks"
                     android:layout_width="match_parent"
                     android:layout_height="162dp"
-                    android:layout_marginTop="25dp"
-                    android:orientation="horizontal"
+                    android:layout_below="@id/btnMoreOtherBooks"
+                    android:layout_marginVertical="15dp"
                     />
 
                 <!-- Bundling -->
