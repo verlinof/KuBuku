@@ -8,12 +8,12 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center" href="#readme-top">
+<div align="center">
   <a href="https://github.com/verlinof/KuBuku">
     <img src="https://github.com/verlinof/KuBuku/blob/master/app/src/main/res/drawable/kubuku_logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">KuKubu</h3>
+<h3 align="center">KuBuku</h3>
 
   <p align="center">
     Accessible Book Rental App
