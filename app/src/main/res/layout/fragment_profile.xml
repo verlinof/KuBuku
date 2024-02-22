@@ -15,24 +15,24 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="321dp"
-            android:background="@drawable/rounded_bg_profile_fragment"
+            android:background="@drawable/rounded_bottom_bg"
             android:padding="30dp"
             >
 
             <ImageView
-                android:id="@+id/btnCart"
+                android:id="@+id/btnWishlist"
                 android:layout_width="20dp"
                 android:layout_height="18dp"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_cart"
+                android:src="@drawable/ic_wishlist2"
                 />
 
             <ImageView
-                android:id="@+id/btnWishlist"
+                android:id="@+id/btnCart"
                 android:layout_width="18dp"
                 android:layout_height="20dp"
-                android:layout_toStartOf="@id/btnCart"
-                android:src="@drawable/ic_wishlist2"
+                android:layout_toStartOf="@id/btnWishlist"
+                android:src="@drawable/ic_cart"
                 android:layout_marginEnd="14dp"
                 />
 
@@ -41,7 +41,7 @@
                 android:layout_width="18dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_settings"
-                android:layout_toStartOf="@+id/btnWishlist"
+                android:layout_toStartOf="@+id/btnCart"
                 android:layout_marginEnd="14dp"
                 />
 
