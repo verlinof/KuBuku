@@ -107,7 +107,7 @@ Don't forget to give the project a star! Thanks again!
 
 [Hustler] Devina Fadylah Nurnayla - devina.fadylah@gmail.com <br />
 [Hipster] Namira Rismada Sari - namirarisma31@gmail.com <br />
-[Hacker] Verlino Raya Fajri - marimo.zx@gmail.com <br />
+[Hacker] Verlino Raya Fajri - verlinorayafajri@mail.ugm.ac.id <br />
 [Hacker] Zuhdi Ardi - zuhdiardi.work@gmail.com <br />
 
 
